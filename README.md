@@ -1,2 +1,5 @@
-# watchlist
-HackerYou - Project 6 - Watchlist - Group Repo
+# Getting Started
+
+1. `git clone` this repo
+2. `npm install`
+3. enjoy!
