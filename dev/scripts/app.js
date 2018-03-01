@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from "./Home";
+import WatchList from './WatchList';
+import MovieInfo from './MovieInfo';
+import SearchResults from "./SearchResults";
+import{
+  BrowserRouter as Router,
+  Route, Link } from 'react-router-dom';
+
+
 
 // Initialize Firebase
 var config = {
@@ -15,9 +24,14 @@ firebase.initializeApp(config);
 class App extends React.Component {
     render() {
       return (
-        <div>
-          Hello
-        </div>
+        <Router>
+          <div>
+            <Route path="/" exact component={Home} />
+            <Route path="/SearchResults" exact component={SearchResults} />
+            <Route path="/WatchList" exact component={WatchList} />
+            <Route path="/MovieInfo" exact component={MovieInfo}/>
+          </div>
+        </Router>
       )
     }
 }
