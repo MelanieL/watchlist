@@ -13,12 +13,10 @@ class Home extends React.Component {
     constructor () {
         super();
         this.state = {
-            genres: [],
-            input: ''
+            genre: []
         }
 
-        this.inputHandler = this.inputHandler.bind(this)
-        this.optionsValues = this.optionsValues.bind(this)
+        this.findGenre = this.findGenre.bind(this);
     }
 
     componentDidMount() {
@@ -28,44 +26,26 @@ class Home extends React.Component {
             }
         }).then( data  => 
             this.setState({
-                genres: data.data.genres,
+                genre: data.data.genres,
             })
-            )
-    }
-
-    inputHandler (event) {
-        this.setState({
-            input: event.target.value
-        })
-    }
-
-    // optionsValues () {
-    //     return (
-    //         this.state.genres.map(({ name }) => {
-    //             <div>
-    //                 <option></option>
-    //             </div>
-    // }
-
-    // }
-
-    render() {
-
-        // just text output
-        this.state.genres.map( ({name, id}) => 
-            console.log(name)
         )
-
-        console.log(this.state.input)
-
-
-
+    }
+        
+    findGenre() {
+        return (
+            this.state.genre.map((data) => {
+                return (
+                    <option value={data.id}>{data.name}</option>
+                )
+            })
+        )
+    }
+    
+    render() {
         return (
             <div>
-                    <h1>this is home page</h1>                    
-                    
-                    <SearchForm placeholder='title' userInput={this.inputHandler} />
-                    <SearchGenre genre={this.optionsValues}/>
+                    <h1>this is home page</h1>                                       
+                    <SearchGenre genreName={this.findGenre()} />
             </div>
         )
     }

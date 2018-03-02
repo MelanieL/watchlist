@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-
-
-
-
 class SearchForm extends React.Component {
-
-    
 
     render() {
         console.log('searchform')
