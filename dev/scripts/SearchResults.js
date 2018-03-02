@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchForm from './SearchForm';
+import SearchTitle from './SearchTitle';
 import TopBar from './TopBar';
 import UniqueMovie from './UniqueMovie';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,6 @@ class SearchResults extends React.Component {
 
     constructor () {
         super();
-
         this.state = {
             movies: [],
         }

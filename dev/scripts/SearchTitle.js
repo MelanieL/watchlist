@@ -3,20 +3,18 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class SearchForm extends React.Component {
+class SearchTitle extends React.Component {
 
     render() {
         console.log('searchform')
 
         return (
             <div>
-                <form>
+                <form> 
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={'/SearchResults'}>
-                        
                         <input type="submit" />
-                    </Link>
-                    
+                    </Link>     
                 </form>
             </div>
         )
@@ -25,4 +23,4 @@ class SearchForm extends React.Component {
 
 
 
-export default SearchForm;
+export default SearchTitle;
