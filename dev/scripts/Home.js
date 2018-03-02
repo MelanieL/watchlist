@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import SearchForm from './SearchForm';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SearchGenre from './SearchGenre';
 
 //This page is where log in and logged in screen will be stated
 
@@ -17,6 +18,7 @@ class Home extends React.Component {
         }
 
         this.inputHandler = this.inputHandler.bind(this)
+        this.optionsValues = this.optionsValues.bind(this)
     }
 
     componentDidMount() {
@@ -35,13 +37,23 @@ class Home extends React.Component {
         this.setState({
             input: event.target.value
         })
-    }    
+    }
+
+    // optionsValues () {
+    //     return (
+    //         this.state.genres.map(({ name }) => {
+    //             <div>
+    //                 <option></option>
+    //             </div>
+    // }
+
+    // }
 
     render() {
 
         // just text output
         this.state.genres.map( ({name, id}) => 
-            console.log(name + ' ' + id)
+            console.log(name)
         )
 
         console.log(this.state.input)
@@ -53,8 +65,7 @@ class Home extends React.Component {
                     <h1>this is home page</h1>                    
                     
                     <SearchForm placeholder='title' userInput={this.inputHandler} />
-                    <SearchForm  placeholder='genre' />
-                    <Link to={"./WatchList"}><p>watch list</p></Link>
+                    <SearchGenre genre={this.optionsValues}/>
             </div>
         )
     }

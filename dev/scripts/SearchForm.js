@@ -13,6 +13,7 @@ class SearchForm extends React.Component {
 
     render() {
         console.log('searchform')
+
         return (
             <div>
                 <form>
@@ -21,6 +22,7 @@ class SearchForm extends React.Component {
                         
                         <input type="submit" />
                     </Link>
+                    
                 </form>
             </div>
         )
