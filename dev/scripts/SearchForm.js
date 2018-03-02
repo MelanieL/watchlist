@@ -16,7 +16,7 @@ class SearchForm extends React.Component {
         return (
             <div>
                 <form>
-                    <input type="text" />
+                    <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={'/SearchResults'}>
                         
                         <input type="submit" />

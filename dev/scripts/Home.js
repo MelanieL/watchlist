@@ -12,10 +12,11 @@ class Home extends React.Component {
     constructor () {
         super();
         this.state = {
-            movies: [],
-            moviesearch: '',
-            genres: []
+            genres: [],
+            input: ''
         }
+
+        this.inputHandler = this.inputHandler.bind(this)
     }
 
     componentDidMount() {
@@ -30,18 +31,29 @@ class Home extends React.Component {
             )
     }
 
+    inputHandler (event) {
+        this.setState({
+            input: event.target.value
+        })
+    }    
+
     render() {
-        this.state.genres.map( (genres) => 
-            genres
+
+        // just text output
+        this.state.genres.map( ({name, id}) => 
+            console.log(name + ' ' + id)
         )
-        
+
+        console.log(this.state.input)
+
+
+
         return (
             <div>
-                    <h1>this is home page</h1>
+                    <h1>this is home page</h1>                    
                     
-                    
-                    <SearchForm />
-                    <SearchForm />
+                    <SearchForm placeholder='title' userInput={this.inputHandler} />
+                    <SearchForm  placeholder='genre' />
                     <Link to={"./WatchList"}><p>watch list</p></Link>
             </div>
         )
