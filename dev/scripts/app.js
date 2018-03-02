@@ -22,6 +22,7 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends React.Component {
+
     render() {
       return (
         <Router>

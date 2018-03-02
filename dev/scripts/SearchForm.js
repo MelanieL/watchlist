@@ -1,10 +1,15 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 
 
 
 class SearchForm extends React.Component {
+
+    
 
     render() {
         console.log('searchform')
@@ -13,7 +18,8 @@ class SearchForm extends React.Component {
                 <form>
                     <input type="text" />
                     <Link to={'/SearchResults'}>
-                        <input type="submit"/>
+                        
+                        <input type="submit" />
                     </Link>
                 </form>
             </div>
