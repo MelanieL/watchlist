@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchForm from './SearchForm';
+import SearchTitle from './SearchTitle';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SearchGenre from './SearchGenre';
@@ -13,7 +13,8 @@ class Home extends React.Component {
     constructor () {
         super();
         this.state = {
-            genre: []
+            genre: [],
+            userGenreSelection: ""
         }
 
         this.findGenre = this.findGenre.bind(this);
@@ -30,12 +31,17 @@ class Home extends React.Component {
             })
         )
     }
+
+    // handleClick(e) {
         
+    // }
+
     findGenre() {
         return (
             this.state.genre.map((data) => {
                 return (
                     <option value={data.id}>{data.name}</option>
+                    
                 )
             })
         )
@@ -44,7 +50,8 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                    <h1>this is home page</h1>                                       
+                    <h1>this is home page</h1>
+                    <SearchTitle />                                     
                     <SearchGenre genreName={this.findGenre()} />
             </div>
         )
