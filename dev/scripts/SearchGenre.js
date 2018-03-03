@@ -50,8 +50,10 @@ class SearchGenre extends React.Component {
                     <button>next</button>
                     {/* <button></button> */}
                 </form>
+
                 <button 
                 onClick={() => {this.props.passState(this.state.tempUserGenreSelection)}}>Submi</button>
+
             </div>
         ) 
     }
