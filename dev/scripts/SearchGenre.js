@@ -12,7 +12,6 @@ class SearchGenre extends React.Component {
         }
 
         this.handleGenreChange = this.handleGenreChange.bind(this);
-        this.onClickTest = this.onClickTest.bind(this); 
     }
 
     handleGenreChange(e) {
@@ -22,21 +21,12 @@ class SearchGenre extends React.Component {
         });
     }
 
-    onClickTest(e) {
-        this.setState({
-            tempUserGenreSelection: e.target.value
-        });
-        this.props.passState(this.state.tempUserGenreSelection);
-    }
-
     render() {
         return (
             <div>
                 <form>
                     <select
-                        // onChange={this.handleGenreChange}
-                        onChange={this.onClickTest}
-                        value={this.state.tempUserGenreSelection}
+                        onChange={this.handleGenreChange}
                     >
                         {/* {this.props.genreName} */}
                         return(
@@ -47,10 +37,7 @@ class SearchGenre extends React.Component {
                         })}
                         )
                     </select>
-                    <button>next</button>
-                    {/* <button></button> */}
                 </form>
-
                 <button
                     onClick={() => { this.props.passState(this.state.tempUserGenreSelection) }}>Submi</button>
 
@@ -60,14 +47,3 @@ class SearchGenre extends React.Component {
 }
 
 export default SearchGenre;
-
-{/* <form onSubmit={this.addJar}>
-
-    <label htmlFor="jarcat">Category</label>
-    <input type="text" id="jarcat" value={this.state.jarcat} onChange={this.handleChange} />
-
-    <label htmlFor="jaramount">Total</label>
-    <input type="text" id="jaramount" value={this.state.jaramount} onChange={this.handleChange} />
-
-    <input className="button add_jar_button" type="submit" value="Add Jar" />
-</form> */}
