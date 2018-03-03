@@ -8,32 +8,50 @@ class SearchGenre extends React.Component {
     constructor() {
         super();
         this.state = {
-            userSelectionGenre: ''
+            tempUserGenreSelection: ''
         }
-        this.handleUserSelectionGenre = this.handleUserSelectionGenre.bind(this);
+
+        this.handleGenreChange = this.handleGenreChange.bind(this);
+        this.onClickTest = this.onClickTest.bind(this); 
     }
 
-    handleUserSelectionGenre(userSelection) {
-        alert('working');
-        userSelection.preventDefault(userSelection);
-        // const userChoice = 
-        console.log(userSelection)
+    handleGenreChange(e) {
+        console.log('run');
         this.setState({
-            userSelectionGenre: userSelection.target.value
-        }) 
+            tempUserGenreSelection:e.target.value
+        });
+    }
+
+    onClickTest(e) {
+        this.setState({
+            tempUserGenreSelection: e.target.value
+        });
+        this.props.passState(this.state.tempUserGenreSelection);
     }
     
     render () {
-        console.log(this.state.userSelectionGenre);
         return (
             <div>
-                <form onSubmit={this.handleUserSelectionGenre}>
-                    <select>
-                        {this.props.genreName}
+                <form>
+                    <select 
+                    // onChange={this.handleGenreChange}
+                    onChange={this.onClickTest}
+                    value={this.state.tempUserGenreSelection}
+                    >
+                        {/* {this.props.genreName} */}
+                        return(
+                            {this.props.genres.map((genre, i) =>{
+                                return (
+                                    <option key={i} value={genre.id}>{genre.name}</option>
+                                )
+                            })}
+                        )
                     </select>
-                    <input type="submit" value="Find Genre" />
+                    <button>next</button>
+                    {/* <button></button> */}
                 </form>
-                {/* <h1>{this.state}</h1> */}
+                <button 
+                onClick={() => {this.props.passState(this.state.tempUserGenreSelection)}}>Submi</button>
             </div>
         ) 
     }

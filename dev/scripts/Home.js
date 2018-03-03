@@ -14,10 +14,9 @@ class Home extends React.Component {
         super();
         this.state = {
             genre: [],
-            userGenreSelection: ""
+            userGenreSelection: "" 
         }
-
-        this.findGenre = this.findGenre.bind(this);
+        this.passState = this.passState.bind(this);
     }
 
     componentDidMount() {
@@ -32,27 +31,26 @@ class Home extends React.Component {
         )
     }
 
-    // handleClick(e) {
-        
-    // }
-
-    findGenre() {
-        return (
-            this.state.genre.map((data) => {
-                return (
-                    <option value={data.id}>{data.name}</option>
-                    
-                )
-            })
-        )
+    passState (value) {
+        this.setState({
+            userGenreSelection: value
+        })
+        console.log(value)
     }
-    
+
     render() {
         return (
             <div>
-                    <h1>this is home page</h1>
+                    <h1>this is homes</h1>
                     <SearchTitle />                                     
-                    <SearchGenre genreName={this.findGenre()} />
+                    <SearchGenre 
+                        // genreName={this.findGenre()}
+                        genres={this.state.genre}
+                        // userSelectGenre={this.userSelectsGenre()} 
+                        passState={this.passState}
+                        // userGenreSelection={this.state.userGenreSelection}
+
+                    />
             </div>
         )
     }
