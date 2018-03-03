@@ -8,8 +8,9 @@ class UniqueMovie extends React.Component {
         console.log('search is returning')
         return (
             <div>
+                <img src={`https://image.tmdb.org/t/p/w200/${this.props.movie.poster_path}`} alt="" />
                 <div>
-                    <Link to={"/"}>
+                    <Link to={'/MovieInfo'}>
                         <button>I</button>
                     </Link>
                     <button>+</button>
