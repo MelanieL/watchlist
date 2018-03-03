@@ -6,14 +6,14 @@ import axios from 'axios';
 class SearchTitle extends React.Component {
 
     render() {
-        console.log('searchform')
+        // console.log('searchform')
 
         return (
             <div>
                 <form> 
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={'/SearchResults'}>
-                        <input type="submit" />
+                        {/* <input type="submit" /> */}
                     </Link>     
                 </form>
             </div>
