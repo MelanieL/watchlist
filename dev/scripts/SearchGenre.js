@@ -39,7 +39,7 @@ class SearchGenre extends React.Component {
                     </select>
                 </form>
                 <button
-                    onClick={() => { this.props.passState(this.state.tempUserGenreSelection) }}>Submi</button>
+                    onClick={() => { this.props.passState(this.state.tempUserGenreSelection) }}>Submit small change</button>
 
             </div>
         )
