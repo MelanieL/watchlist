@@ -18,7 +18,7 @@ class SearchGenre extends React.Component {
     handleGenreChange(e) {
         console.log('run');
         this.setState({
-            tempUserGenreSelection:e.target.value
+            tempUserGenreSelection: e.target.value
         });
     }
 
@@ -28,32 +28,34 @@ class SearchGenre extends React.Component {
         });
         this.props.passState(this.state.tempUserGenreSelection);
     }
-    
-    render () {
+
+    render() {
         return (
             <div>
                 <form>
-                    <select 
-                    // onChange={this.handleGenreChange}
-                    onChange={this.onClickTest}
-                    value={this.state.tempUserGenreSelection}
+                    <select
+                        // onChange={this.handleGenreChange}
+                        onChange={this.onClickTest}
+                        value={this.state.tempUserGenreSelection}
                     >
                         {/* {this.props.genreName} */}
                         return(
-                            {this.props.genres.map((genre, i) =>{
-                                return (
-                                    <option key={i} value={genre.id}>{genre.name}</option>
-                                )
-                            })}
+                            {this.props.genres.map((genre, i) => {
+                            return (
+                                <option key={i} value={genre.id}>{genre.name}</option>
+                            )
+                        })}
                         )
                     </select>
                     <button>next</button>
                     {/* <button></button> */}
                 </form>
-                <button 
-                onClick={() => {this.props.passState(this.state.tempUserGenreSelection)}}>Submi</button>
+
+                <button
+                    onClick={() => { this.props.passState(this.state.tempUserGenreSelection) }}>Submi</button>
+
             </div>
-        ) 
+        )
     }
 }
 
