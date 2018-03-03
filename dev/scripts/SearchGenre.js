@@ -16,7 +16,6 @@ class SearchGenre extends React.Component {
     handleUserSelectionGenre(userSelection) {
         alert('working');
         userSelection.preventDefault(userSelection);
-        // const userChoice = 
         console.log(userSelection)
         this.setState({
             userSelectionGenre: userSelection.target.value
@@ -33,7 +32,6 @@ class SearchGenre extends React.Component {
                     </select>
                     <input type="submit" value="Find Genre" />
                 </form>
-                {/* <h1>{this.state}</h1> */}
             </div>
         ) 
     }
