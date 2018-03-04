@@ -65,8 +65,8 @@ class MovieInfo extends React.Component {
                 <p>Description: {this.state.overview}</p>
                 <p>Genres: {this.state.genres}</p>
                 {/* ID will not be rendered on final product only here now so I know it's working - Mel */}
-                <p>ID:{this.state.id}</p>
-                <Comments />
+                {/* <p>ID:{this.state.id}</p> */}
+                <Comments movieID={this.state.id} />
             </div>
         )
     }

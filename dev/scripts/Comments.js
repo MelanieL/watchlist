@@ -33,7 +33,7 @@ class Comments extends React.Component {
     }
 
     componentDidMount() {
-        const dbref = firebase.database().ref('/comments');
+        const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
 
         dbref.on('value', (snapshot) => {
             const data = snapshot.val();
@@ -54,7 +54,7 @@ class Comments extends React.Component {
         const aComment = {
             name: this.state.comment
         };
-        const dbref = firebase.database().ref('/comments');
+        const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
         dbref.push(aComment);
         this.setState({
             comment: ''
@@ -62,7 +62,7 @@ class Comments extends React.Component {
     }
 
     removeComment(key) {
-        return firebase.database().ref('comments').child(key).remove();
+        return firebase.database().ref(`comments`).child(key).remove();
     }
 
     render() {
@@ -75,6 +75,7 @@ class Comments extends React.Component {
                         <input type="submit" value="Add Comment"/>
                     </form>
                 </div>
+                <p>Testing ID: {this.props.movieID}</p>
                 <div className="comments__div">
                     <h3>Previous Comments</h3>
                     {this.state.comments.map((comment) => {
