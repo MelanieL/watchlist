@@ -10,7 +10,7 @@ class Recommend extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://api.themoviedb.org/3/movie/${movieID}/recommendations`, {
+        axios.get(`${ config.apiURL }/movie/${movieID}/recommendations`, {
             params: {
                 api_key: 'f012df5d63927931e82fe659a8aaa3ac'
             }

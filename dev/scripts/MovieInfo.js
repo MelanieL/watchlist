@@ -34,19 +34,14 @@ class MovieInfo extends React.Component {
                 title: data.title,
                 release_date: data.release_date,
                 overview: data.overview,
-                id: data.id
+                id: data.id,
+                genres: data.genres
             });
             // Still an issue here listing all genres, moving on to comments and coming back to this - Mel
-            return data.genres.map((genre) => {
-                console.log(genre.name);
-                const genreList = [];
-                genreList.push(genre.name);
-                this.setState({
-                    genres: genreList
-                })
-            });
-        });
+            
+        })
     }
+
 
     render() {
         return (
@@ -55,7 +50,7 @@ class MovieInfo extends React.Component {
                 <div><img src={`https://image.tmdb.org/t/p/w200/${this.state.poster_path}`} alt="poster"/></div>
                 <h2>Title: {this.state.title}</h2>
                 <h2>Release Date: {this.state.release_date}</h2>
-                <Link to={"./SearchResults"}>
+                <Link to={"./Recommend"}>
                     <button>You might also like</button>
                 </Link>
                 <div>
@@ -63,7 +58,10 @@ class MovieInfo extends React.Component {
                     {/* <button>Play Trailer</button> */}
                 </div>
                 <p>Description: {this.state.overview}</p>
-                <p>Genres: {this.state.genres}</p>
+                <p>Genres: {this.state.genres.map( (data, i) => 
+                    {
+                    return (<span key={i}> {data.name} </span>)}
+                    )} </p>
                 {/* ID will not be rendered on final product only here now so I know it's working - Mel */}
                 {/* <p>ID:{this.state.id}</p> */}
                 <Comments movieID={this.state.id} />
