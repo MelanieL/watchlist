@@ -22,22 +22,22 @@ class Comments extends React.Component {
     }
 
     // Use this as a listener, because component did mount will render before props are received
-    componentWillReceiveProps() {
-        const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
-        console.log(this.props);
-
-        dbref.on('value', (snapshot) => {
-            const data = snapshot.val();
-            console.log(data);
-            const state = [];
-            for (let key in data) {
-                data[key].key = key;
-                state.push(data[key]);
-            }
-            this.setState({
-                comments: state,
+    componentWillReceiveProps(props) {
+        const dbref = firebase.database().ref(`${props.movieID}/comments`);
+        if(props.movieID !== undefined){
+            dbref.on('value', (snapshot) => {
+                const data = snapshot.val();
+                console.log(data);
+                const state = [];
+                for (let key in data) {
+                    data[key].key = key;
+                    state.push(data[key]);
+                }
+                this.setState({
+                    comments: state,
+                });
             });
-        });
+        }
     }
 
     addComment(e) {
