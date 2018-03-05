@@ -22,23 +22,27 @@ class MovieInfo extends React.Component {
         };
     }
 
+    
     componentDidMount() {
         axios.get(`${config.apiURL}/movie/${this.props.match.params.id}`, {
             params: {
                 api_key: config.apiKey
             }
         })
-        .then(({ data }) => {
-            console.log(data);
-            this.setState({
-                poster_path: data.poster_path,
-                title: data.title,
-                release_date: data.release_date,
-                overview: data.overview,
-                id: data.id,
-                genres: data.genres
-            });
-           
+            .then(({ data }) => {
+                console.log(data);
+                this.setState({
+                    poster_path: data.poster_path,
+                    title: data.title,
+                    release_date: data.release_date,
+                    overview: data.overview,
+                    id: data.id,
+                    genres: data.genres
+                });
+                // Still an issue here listing all genres, moving on to comments and coming back to this - Mel
+
+            })
+    }  
 
 
     render() {
