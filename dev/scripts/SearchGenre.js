@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Axios from 'axios';
+
 
 
 
@@ -9,7 +9,7 @@ class SearchGenre extends React.Component {
 
     
     render() {
-        
+        console.log(this.props);
 
         return (
             <div>
@@ -25,8 +25,15 @@ class SearchGenre extends React.Component {
                         )
                     </select>
                 </form>
-                <button>Submit small change</button>
+                <Link to={
+                    {
+                        pathname: '/SearchResultsGenre',
 
+                        state: { name: this.props.genreRequest }
+                    }}>
+                    {/* <input type="submit" /> */}
+                    <button>Submit small change</button>
+                </Link>
             </div>
         )
     }

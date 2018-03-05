@@ -47,7 +47,6 @@ class Home extends React.Component {
         })
     }
 
-    
 
     render() {
         return (
@@ -60,8 +59,7 @@ class Home extends React.Component {
                         // userSelectGenre={this.userSelectsGenre()} 
                         passState={this.passState}
                         // userGenreSelection={this.state.userGenreSelection}
-
-                    />
+                        genreRequest={this.state.userGenreSelection} />
             </div>
         )
     }
