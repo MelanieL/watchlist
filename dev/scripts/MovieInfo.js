@@ -52,7 +52,11 @@ class MovieInfo extends React.Component {
                 <div><img src={`https://image.tmdb.org/t/p/w200/${this.state.poster_path}`} alt="poster"/></div>
                 <h2>Title: {this.state.title}</h2>
                 <h2>Release Date: {this.state.release_date}</h2>
-                <Link to={"./Recommend"}>
+
+                <Link to={{
+                    pathname: '/Recommend',
+                    state: { name: this.state.id, }}                  
+                    }>
                     <button>You might also like</button>
                 </Link>
                 <div>

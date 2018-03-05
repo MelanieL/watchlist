@@ -1,33 +1,45 @@
 import React from 'react';
+import MovieInfo from './MovieInfo';
+import axios from 'axios';
+import config from './config';
+import { Link } from 'react-router-dom';
+import UniqueMovie from './UniqueMovie'
 
 class Recommend extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this.props);
         this.state = {
-            movieID: '',
-            recommendMovies: ''
+            movieID: this.props.location.state.name,
+            recommendMovies: []
         }
+        console.log(this.state);
     }
 
     componentDidMount() {
-        axios.get(`${ config.apiURL }/movie/${movieID}/recommendations`, {
+        axios.get(`${config.apiURL}/movie/${this.state.movieID}/recommendations`, {
             params: {
-                api_key: 'f012df5d63927931e82fe659a8aaa3ac'
+                api_key: config.apiKey,
+                language: 'en-US',
+                include_adult: false,
+                page: 1
             }
-        }).then( data  => 
+        }).then( data => {
+            console.log(data)
             this.setState({
-                recommendMovies: data,
-            })
-        )
+                recommendMovies: data.data.results,
+            });
+        
+        });
     }
 
     render() {
         return (
                 <div>
-                    {this.state.movies.map((movie) => {
+                    {this.state.recommendMovies.map((movie) => {
                         return <UniqueMovie movie={movie} key={movie.id} />
                     })}
-                </div>
+                </div> 
         )
     }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Comment from './Comment';
 
+
 class Comments extends React.Component {
 
     constructor() {
@@ -24,7 +25,9 @@ class Comments extends React.Component {
     // Use this as a listener, because component did mount will render before props are received
     componentWillReceiveProps(props) {
         const dbref = firebase.database().ref(`${props.movieID}/comments`);
-        if(props.movieID !== undefined){
+
+        if (props.movieID !== undefined) {
+
             dbref.on('value', (snapshot) => {
                 const data = snapshot.val();
                 console.log(data);
