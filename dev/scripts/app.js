@@ -8,6 +8,7 @@ import SearchResultsGenre from './SearchResultsGenre';
 import{
   BrowserRouter as Router,
   Route, Link } from 'react-router-dom';
+import Recommend from './Recommend';
 
 // Initialize Firebase
 var config = {
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path="/SearchResultsGenre" exact component={SearchResultsGenre} />
             <Route path="/WatchList" exact component={WatchList} />
             <Route path="/movie/:id" exact component={MovieInfo}/>
+            <Route path="/Recommend" exact component={Recommend} />
           </div>
         </Router>
       )
