@@ -9,8 +9,6 @@ import{
   BrowserRouter as Router,
   Route, Link } from 'react-router-dom';
 
-
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCBjWiDGq0F7a6AdGWW6WlptRMnlT_hyww",

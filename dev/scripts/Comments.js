@@ -1,16 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// // Initialize Firebase - apparently do not need a second time
-// var config = {
-//     apiKey: "AIzaSyCBjWiDGq0F7a6AdGWW6WlptRMnlT_hyww",
-//     authDomain: "project6-2296b.firebaseapp.com",
-//     databaseURL: "https://project6-2296b.firebaseio.com",
-//     projectId: "project6-2296b",
-//     storageBucket: "",
-//     messagingSenderId: "106014854957"
-// };
-// firebase.initializeApp(config);
+import Comment from './Comment';
 
 class Comments extends React.Component {
 
@@ -31,11 +21,13 @@ class Comments extends React.Component {
         });
     }
 
-    componentDidMount() {
-        const dbref = firebase.database().ref('/comments');
+    componentWillReceiveProps() {
+        const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
+        console.log(this.props);
 
         dbref.on('value', (snapshot) => {
             const data = snapshot.val();
+            console.log(data);
             const state = [];
             for (let key in data) {
                 data[key].key = key;
@@ -50,42 +42,39 @@ class Comments extends React.Component {
     addComment(e) {
         e.preventDefault();
         // This is making an array from whatever we pass it
-        const comment = {
+        const aComment = {
             name: this.state.comment
         };
-        const dbref = firebase.database().ref('/comments');
-        dbref.push(comment);
+        const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
+        dbref.push(aComment);
         this.setState({
             comment: ''
         });
-
     }
 
     removeComment(key) {
-        return firebase.database().ref('comments').child(key).remove();
+        return firebase.database().ref(`${this.props.movieID}/comments`).child(key).remove();
     }
 
     render() {
         return (
             <div>
-                <h1>Leave a comment</h1>
-                <form onSubmit={this.addComment}>
-                    <input type="text" value={this.state.comment} onChange={this.handleChange} />
-                    <input type="submit" value="Add Comment"/>
-                    <button onClick={() => this.props.remove(this.props.commentIndex)}><div>x</div></button>
-                </form>
-
-                <div className="commentsdiv">
-                    <h3>Previous Comments</h3>
+                <div className="comments__form">
+                    <h1>Leave a comment</h1>
+                    <form onSubmit={this.addComment}>
+                        <input type="text" id="comment" value={this.state.comment} onChange={this.handleChange} />
+                        <input type="submit" value="Add Comment"/>
+                    </form>
                 </div>
-                <div className="mainpage__jarsdiv">
+                {/* <p>Testing ID: {this.props.movieID}</p> */}
+                <div className="comments__div">
+                    <h3>Previous Comments</h3>
                     {this.state.comments.map((comment) => {
                         return (
-                            <Jar data={jar} key={jar.key} remove={this.removeJar} jarIndex={jar.key} />
+                            <Comment data={comment} key={comment.key} remove={this.removeComment} aCommentIndex={comment.key} />
                         )
                     })}
-                </div>
-
+                </div>                
             </div>
         )
     }
