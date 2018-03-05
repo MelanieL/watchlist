@@ -16,6 +16,7 @@ class MovieInfo extends React.Component {
             release_date: '',
             overview: '',
             genres: [],
+            genreID: [],
             // ID will not render on the final page, but is needed to be passed along as props to comment - Mel
             id: ''
         };
@@ -37,10 +38,7 @@ class MovieInfo extends React.Component {
                 id: data.id,
                 genres: data.genres
             });
-            // Still an issue here listing all genres, moving on to comments and coming back to this - Mel
-            
-        })
-    }
+           
 
 
     render() {
@@ -58,6 +56,7 @@ class MovieInfo extends React.Component {
                     {/* <button>Play Trailer</button> */}
                 </div>
                 <p>Description: {this.state.overview}</p>
+
                 <p>Genres: {this.state.genres.map( (data, i) => 
                     {
                     return (<span key={i}> {data.name} </span>)}
