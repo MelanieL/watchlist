@@ -14,7 +14,8 @@ class SearchResults extends React.Component {
     constructor () {
         super();
         this.state = {
-            movies: []
+            movies: [],
+            name: ''
         };
     }
 

@@ -8,15 +8,19 @@ import SearchGenre from './SearchGenre';
 //This page is where log in and logged in screen will be stated
 
 
+
+
 class Home extends React.Component {
 
     constructor () {
         super();
         this.state = {
             genre: [],
-            userGenreSelection: "" 
+            userGenreSelection: "",
+            input: ""
         }
         this.passState = this.passState.bind(this);
+        this.input = this.input.bind(this);
     }
 
     componentDidMount() {
@@ -31,18 +35,25 @@ class Home extends React.Component {
         )
     }
 
-    passState (value) {
+    passState (event) {
         this.setState({
-            userGenreSelection: value
+            userGenreSelection: event.target.value
         })
-        console.log(value)
     }
+
+    input (event) {
+        this.setState({
+            input: event.target.value
+        })
+    }
+
+    
 
     render() {
         return (
             <div>
                     <h1>this is homes</h1>
-                    <SearchTitle />                                     
+                    <SearchTitle placeholder="title" userInput={this.input}/>                                     
                     <SearchGenre 
                         // genreName={this.findGenre()}
                         genres={this.state.genre}

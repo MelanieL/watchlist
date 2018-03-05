@@ -14,6 +14,7 @@ class SearchTitle extends React.Component {
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={'/SearchResults'}>
                         {/* <input type="submit" /> */}
+                        <button>Click</button>
                     </Link>     
                 </form>
             </div>
