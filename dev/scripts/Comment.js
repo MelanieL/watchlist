@@ -1,4 +1,5 @@
 import React from 'react';
+import Comments from './Comments'
 
 class Comment extends React.Component {
 

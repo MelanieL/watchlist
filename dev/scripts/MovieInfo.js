@@ -54,10 +54,9 @@ class MovieInfo extends React.Component {
                 <h2>Release Date: {this.state.release_date}</h2>
 
                 <Link to={{
-                    pathname: '',
-
-                        
-            }}>
+                    pathname: '/Recommend',
+                    state: { name: this.state.id, }}                  
+                    }>
                     <button>You might also like</button>
                 </Link>
                 <div>
