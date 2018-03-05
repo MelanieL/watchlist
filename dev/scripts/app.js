@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Home from "./Home";
 import WatchList from './WatchList';
 import MovieInfo from './MovieInfo';
-import SearchResults from "./SearchResults";
+import SearchResultsTitle from './SearchResultsTitle';
+import SearchResultsGenre from './SearchResultsGenre';
 import{
   BrowserRouter as Router,
   Route, Link } from 'react-router-dom';
@@ -28,7 +29,8 @@ class App extends React.Component {
         <Router>
           <div>
             <Route path="/" exact component={Home} />
-            <Route path="/SearchResults" exact component={SearchResults} />
+            <Route path="/SearchResultsTitle" exact component={SearchResultsTitle} />
+            <Route path="/SearchResultsGenre" exact component={SearchResultsGenre} />
             <Route path="/WatchList" exact component={WatchList} />
             <Route path="/movie/:id" exact component={MovieInfo}/>
           </div>

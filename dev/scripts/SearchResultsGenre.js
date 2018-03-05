@@ -6,15 +6,18 @@ import UniqueMovie from './UniqueMovie';
 import axios from 'axios';
 import config from './config';
 import { Link } from 'react-router-dom';
+import SearchGenre from './SearchGenre';
 
 //This page is where log in and logged in screen will be stated
 
-class SearchResults extends React.Component {
+class SearchResultsGenre extends React.Component {
 
-    constructor () {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this.props);
         this.state = {
-            movies: []
+            movies: [],
+            name: this.props.location.state.name
         };
     }
 
@@ -43,15 +46,15 @@ class SearchResults extends React.Component {
 
 
         // This is the axios call for searching by title
-        
-        axios.get(`${config.apiURL}/search/movie`, {
+
+        axios.get(`${config.apiURL}/genre/${this.state.name}/movies`, {
             params: {
                 api_key: config.apiKey,
                 language: 'en-US',
                 include_adult: false,
                 page: 1,
                 // We will need to set the value below to be based on users response
-                query: 'Sharknado'
+                
             }
         })
             .then(({ data }) => {
@@ -61,18 +64,18 @@ class SearchResults extends React.Component {
                 });
             });
     }
-    
+
     render() {
         return (
-                <div>
-                    {this.state.movies.map((movie) => {
-                        return <UniqueMovie movie={movie} key={movie.id} />
-                    })}
-                </div>
+            <div>
+                {this.state.movies.map((movie) => {
+                    return <UniqueMovie movie={movie} key={movie.id} />
+                })}
+            </div>
         )
     }
 }
 
 
 
-export default SearchResults;
+export default SearchResultsGenre;

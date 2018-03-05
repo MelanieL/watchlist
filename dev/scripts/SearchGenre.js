@@ -3,31 +3,18 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
+
+
 class SearchGenre extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            tempUserGenreSelection: ''
-        }
-
-        this.handleGenreChange = this.handleGenreChange.bind(this);
-    }
-
-    handleGenreChange(e) {
-        console.log('run');
-        this.setState({
-            tempUserGenreSelection: e.target.value
-        });
-    }
-
+    
     render() {
+        console.log(this.props);
+
         return (
             <div>
                 <form>
-                    <select
-                        onChange={this.handleGenreChange}
-                    >
+                    <select onChange={this.props.passState} >
                         {/* {this.props.genreName} */}
                         return(
                             {this.props.genres.map((genre, i) => {
@@ -38,9 +25,15 @@ class SearchGenre extends React.Component {
                         )
                     </select>
                 </form>
-                <button
-                    onClick={() => { this.props.passState(this.state.tempUserGenreSelection) }}>Submit small change</button>
+                <Link to={
+                    {
+                        pathname: '/SearchResultsGenre',
 
+                        state: { name: this.props.genreRequest }
+                    }}>
+                    {/* <input type="submit" /> */}
+                    <button>Submit small change</button>
+                </Link>
             </div>
         )
     }
