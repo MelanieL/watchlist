@@ -11,11 +11,11 @@ import { Link } from 'react-router-dom';
 
 class SearchResults extends React.Component {
 
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
         this.state = {
             movies: [],
-            name: ''
+            name: this.props.location.state.name
         };
     }
 
@@ -52,7 +52,7 @@ class SearchResults extends React.Component {
                 include_adult: false,
                 page: 1,
                 // We will need to set the value below to be based on users response
-                query: 'Sharknado'
+                query: this.state.name
             }
         })
             .then(({ data }) => {

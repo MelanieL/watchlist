@@ -2,8 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class SearchTitle extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            name: 'james'
+        }
+    }
 
     render() {
         // console.log('searchform')
@@ -12,7 +20,10 @@ class SearchTitle extends React.Component {
             <div>
                 <form> 
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
-                    <Link to={'/SearchResults'}>
+                    <Link to={
+                        {pathname: '/SearchResults', 
+                         
+                         state:    {name: this.props.inputRequest }}}>
                         {/* <input type="submit" /> */}
                         <button>Click</button>
                     </Link>     
