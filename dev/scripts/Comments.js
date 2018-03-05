@@ -21,6 +21,7 @@ class Comments extends React.Component {
         });
     }
 
+    // Use this as a listener, because component did mount will render before props are received
     componentWillReceiveProps() {
         const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
         console.log(this.props);
