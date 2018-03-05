@@ -2,17 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Comment from './Comment';
 
-// Initialize Firebase - apparently do not need a second time
-var config = {
-    apiKey: "AIzaSyCBjWiDGq0F7a6AdGWW6WlptRMnlT_hyww",
-    authDomain: "project6-2296b.firebaseapp.com",
-    databaseURL: "https://project6-2296b.firebaseio.com",
-    projectId: "project6-2296b",
-    storageBucket: "",
-    messagingSenderId: "106014854957"
-};
-firebase.initializeApp(config);
-
 class Comments extends React.Component {
 
     constructor() {
@@ -32,11 +21,13 @@ class Comments extends React.Component {
         });
     }
 
-    componentDidMount() {
+    componentWillReceiveProps() {
         const dbref = firebase.database().ref(`${this.props.movieID}/comments`);
+        console.log(this.props);
 
         dbref.on('value', (snapshot) => {
             const data = snapshot.val();
+            console.log(data);
             const state = [];
             for (let key in data) {
                 data[key].key = key;
@@ -62,7 +53,7 @@ class Comments extends React.Component {
     }
 
     removeComment(key) {
-        return firebase.database().ref(`comments`).child(key).remove();
+        return firebase.database().ref(`${this.props.movieID}/comments`).child(key).remove();
     }
 
     render() {
@@ -75,7 +66,7 @@ class Comments extends React.Component {
                         <input type="submit" value="Add Comment"/>
                     </form>
                 </div>
-                <p>Testing ID: {this.props.movieID}</p>
+                {/* <p>Testing ID: {this.props.movieID}</p> */}
                 <div className="comments__div">
                     <h3>Previous Comments</h3>
                     {this.state.comments.map((comment) => {
