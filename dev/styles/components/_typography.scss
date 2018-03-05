@@ -1,0 +1,11 @@
+$title-font: 'Playfair Display', serif;
+$body-font: 'Raleway', sans-serif;
+
+body {
+    font-family: $body-font;
+}
+
+h1 {
+    font-family: $title-font;
+    font-weight: 700;
+}
