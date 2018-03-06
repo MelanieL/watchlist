@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Addbutton from './Addbutton';
 
 class UniqueMovie extends React.Component {
     render() {
@@ -12,7 +13,7 @@ class UniqueMovie extends React.Component {
                     <Link to={`movie/${this.props.movie.id}`}>
                         <button>More Info</button>
                     </Link>
-                    <button>+</button>
+                    <Addbutton />
                 </div>
             </div>
         )

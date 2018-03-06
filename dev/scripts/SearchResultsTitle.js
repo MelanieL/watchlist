@@ -15,33 +15,14 @@ class SearchResultsTitle extends React.Component {
         super(props);
         this.state = {
             movies: [],
-            name: this.props.location.state.name
+            name: this.props.location.state.name,
+            user: this.props.location.state.user
         };
     }
 
     componentDidMount() {
 
-        // This is the axios call for searching by genre
-
-        // axios.get(`${config.apiURL}/discover/movie`, {
-        //     params: {
-        //         api_key: config.apiKey,
-        //         language: 'en-US',
-        //         sort_by: 'popularity.desc',
-        //         include_adult: false,
-        //         include_video: false,
-        //         page: 1,
-        //         // We will need to set the value below to be based on users response
-        //         with_genres: '10770'
-        //     }
-        // })
-        // .then(({ data }) => {
-        //     console.log(data);
-        //     this.setState({
-        //         movies: data.results
-        //     });
-        // });
-
+        
 
         // This is the axios call for searching by title
         
