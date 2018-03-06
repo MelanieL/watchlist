@@ -20,7 +20,6 @@ class UniqueMovie extends React.Component {
                 <div className="movieButtons clearfix">
                     <Link className="moreInfoButton" to={`movie/${this.props.movie.id}`}><img className="movieResultIcon" src={'./dev/images/icon_info.png'}/></Link>
                     <Addbutton user={this.state.user} movie={this.state.movie}/>
-                    <button className="addToListButton" ><img className="movieResultIcon" src={'./dev/images/icon_add.png'} /></button>
                 </div>
             </div>
         )
