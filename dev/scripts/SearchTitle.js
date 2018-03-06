@@ -17,7 +17,9 @@ class SearchTitle extends React.Component {
                         {pathname: '/SearchResultsTitle', 
                          
                          state:    {
-                             name: this.props.inputRequest,user: this.props.user
+                             movieName: this.props.inputRequest, 
+                             user: this.props.user,
+                             userName: this.props.userName
                               }}}>
                         {/* <input type="submit" /> */}
                         <button>Click</button>

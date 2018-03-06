@@ -4,6 +4,7 @@ import SearchTitle from './SearchTitle';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SearchGenre from './SearchGenre';
+import TopBar from './TopBar';
 
 //This page is where log in and logged in screen will be stated
 
@@ -20,7 +21,8 @@ class Home extends React.Component {
             input: "",
             loggedIn: false,
             user: '',
-            userText:''
+            userText:'',
+            userName: ''
         }
         this.passState = this.passState.bind(this);
         this.input = this.input.bind(this);
@@ -40,10 +42,12 @@ class Home extends React.Component {
             })
         );
         firebase.auth().onAuthStateChanged((userRes) =>{
+            console.log(userRes.uid);
             if(userRes) {
                 this.setState({
                     loggedIn: true,
-                    user: userRes.displayName
+                    user: userRes.uid,
+                    userName: userRes.displayName
                 })
             } else {
                 this.setState({
@@ -113,10 +117,15 @@ class Home extends React.Component {
             <div>
                 {this.state.loggedIn ?
                     <div>
-                        <h1>Welcome {this.state.user}</h1>
+                        <TopBar username={this.state.userName}
+                        user={this.state.user}/>
+                        <h1>Welcome {this.state.userName}</h1>
                         <h3>Type in a movie by title or pick a genre from the drop down</h3>
-                        <SearchTitle placeholder="title" userInput={this.input} inputRequest={this.state.input}
-                        user={this.state.user}/>                                     
+
+                        <SearchTitle placeholder="title" userInput={this.input} 
+                        inputRequest={this.state.input}
+                        user={this.state.user}
+                        userName={this.state.userName}/>                                     
                         <SearchGenre 
                             // genreName={this.findGenre()}
                             genres={this.state.genre}
@@ -125,8 +134,10 @@ class Home extends React.Component {
                             // userGenreSelection={this.state.userGenreSelection}
                             genreRequest={this.state.userGenreSelection}
                             user={this.state.user}
-                             />
-                        <button onClick={this.signUserOut}>Sign out {this.state.user}</button>
+                            username={this.state.userName}
+                            />
+
+                        <button onClick={this.signUserOut}>Sign out</button>
                     </div>
                     :
                     <div>

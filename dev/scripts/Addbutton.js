@@ -3,11 +3,11 @@ import axios from 'axios';
 
 class Addbutton extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            user: 'james',
-            movie: 'batman'
+            user: this.props.user,
+            movie: this.props.movie
         }
         this.addMovie = this.addMovie.bind(this);
     }
