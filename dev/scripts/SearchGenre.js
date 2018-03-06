@@ -29,7 +29,9 @@ class SearchGenre extends React.Component {
                     {
                         pathname: '/SearchResultsGenre',
 
-                        state: { name: this.props.genreRequest }
+                        state: { 
+                            name: this.props.genreRequest,
+                            user: this.props.user }
                     }}>
                     {/* <input type="submit" /> */}
                     <button>Submit small change</button>

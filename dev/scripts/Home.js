@@ -19,7 +19,7 @@ class Home extends React.Component {
             userGenreSelection: "",
             input: "",
             loggedIn: false,
-            user: {},
+            user: '',
             userText:''
         }
         this.passState = this.passState.bind(this);
@@ -43,7 +43,7 @@ class Home extends React.Component {
             if(userRes) {
                 this.setState({
                     loggedIn: true,
-                    user: userRes
+                    user: userRes.displayName
                 })
             } else {
                 this.setState({
@@ -62,7 +62,7 @@ class Home extends React.Component {
         })
         firebase.auth().signInWithPopup(provider)
             .then((user) => {
-                console.log(user);
+                console.log(user.displayName);
             });
     }
 
@@ -113,17 +113,20 @@ class Home extends React.Component {
             <div>
                 {this.state.loggedIn ?
                     <div>
-                        <h1>this is homes</h1>
-                        <SearchTitle placeholder="title" userInput={this.input} inputRequest={this.state.input}/>                                     
-                        <SearchGenre
-                            className="searchGenre" 
+                        <h1>Welcome {this.state.user}</h1>
+                        <h3>Type in a movie by title or pick a genre from the drop down</h3>
+                        <SearchTitle placeholder="title" userInput={this.input} inputRequest={this.state.input}
+                        user={this.state.user}/>                                     
+                        <SearchGenre 
                             // genreName={this.findGenre()}
                             genres={this.state.genre}
                             // userSelectGenre={this.userSelectsGenre()} 
                             passState={this.passState}
                             // userGenreSelection={this.state.userGenreSelection}
-                            genreRequest={this.state.userGenreSelection} />
-                        <button onClick={this.signUserOut}>Sign user out!!</button>
+                            genreRequest={this.state.userGenreSelection}
+                            user={this.state.user}
+                             />
+                        <button onClick={this.signUserOut}>Sign out {this.state.user}</button>
                     </div>
                     :
                     <div>
