@@ -114,9 +114,9 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="home__div">
                 {this.state.loggedIn ?
-                    <div>
+                    <div className="home__loggedin">
                         <TopBar username={this.state.userName}
                         user={this.state.user}/>
                         <h1>Welcome {this.state.userName}</h1>
@@ -140,9 +140,10 @@ class Home extends React.Component {
                         <button onClick={this.signUserOut}>Sign out</button>
                     </div>
                     :
-                    <div>
-                        <h2>Welcom! please sign in</h2>
-                        <button onClick={this.signUserIn}>Sign In</button>
+                    <div className="home__login">
+                        <div className="home__login__logoimgdiv"><img src="/dev/images/icon_logo_pink.png" alt="logo image of a tv with a play button inside"/></div>
+                        <h1>MovieWatchlist</h1>
+                        <button className="button__text" onClick={this.signUserIn}>Sign In</button>
                     </div>
                 }
 
