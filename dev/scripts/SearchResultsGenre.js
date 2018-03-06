@@ -47,13 +47,13 @@ class SearchResultsGenre extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="searchResults clearfix">
                 <TopBar 
                 username={this.state.username} 
-                user={this.state.user}
-                />
+                user={this.state.user} 
+          />          
                 {this.state.movies.map((movie) => {
-                    return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
+                   return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
                 })}
             </div>
         )

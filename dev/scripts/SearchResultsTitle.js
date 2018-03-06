@@ -47,7 +47,7 @@ class SearchResultsTitle extends React.Component {
     
     render() {
         return (
-                <div>
+                <div className="searchResults clearfix">
                     <TopBar 
                     user={this.state.user} 
                     movie={this.state.movie}
