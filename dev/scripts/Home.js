@@ -115,7 +115,8 @@ class Home extends React.Component {
                     <div>
                         <h1>this is homes</h1>
                         <SearchTitle placeholder="title" userInput={this.input} inputRequest={this.state.input}/>                                     
-                        <SearchGenre 
+                        <SearchGenre
+                            className="searchGenre" 
                             // genreName={this.findGenre()}
                             genres={this.state.genre}
                             // userSelectGenre={this.userSelectsGenre()} 
