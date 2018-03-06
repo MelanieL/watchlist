@@ -1,0 +1,84 @@
+// Designing mobile first, starting at 320px
+
+.home__div {
+    background: $color1;
+    // height: 100vh;
+}
+
+// This is where the logged in screen starts
+
+
+// This is where the login screen starts
+
+.home__login {
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 15vh;
+}
+
+.home__login h1 {
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.home__login {
+    text-align: center;
+}
+
+.home__login__logoimgdiv {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.home__login__logoimgdiv img {
+    width: 100%;
+}
+
+.home__login__buttondiv {
+    margin: 0 auto;
+}
+
+.home__login button {
+    background: none;
+    color: white;
+    margin: 0 auto;
+    border: $color5 solid 2px;
+    border-radius: 3px;
+    display: block;
+    font-size: 1.2rem;
+    padding: 16px 0;
+    text-align: center;
+    width: 160px;
+}
+
+@media (min-width: 570px) {
+    .home__login__logoimgdiv {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 680px) {
+    .home__login__logoimgdiv {
+        width: 40%;
+    }
+}
+
+@media (min-width: 780px) {
+    .home__login__logoimgdiv {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .home__login__logoimgdiv {
+        width: 20%;
+    }
+}
+
+
+
+
+
+
+

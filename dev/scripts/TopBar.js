@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-
 class TopBar extends React.Component {
 
     constructor(props) {
@@ -16,33 +13,30 @@ class TopBar extends React.Component {
 
     render() {
         return(
-            <div>
-                <div>logo</div>
-                <div>{this.state.username}</div>
-                <div>
-                    <Link to={"/"}>
-                        <button>Home</button>
-                    </Link>
+            <div className="topbar__div clearfix">
+                <div className="topbar__div__logodiv"><img src="/dev/images/icon_logo_white.png" alt=""/></div>
+                <h4>{this.state.username}</h4>
+                    <div className="topbar__div__navbar__icondiv button_home">
+                        <Link to={"/"}>
+                            <img src="/dev/images/icon_home_pink.png" alt="" />
+                        </Link>
+                    </div>
+                    <div className="topbar__div__navbar__icondiv button_list">
                     <Link to={
                         {
-                        pathname: '/WatchList',
+                            pathname: '/WatchList',
+                            state: {
+                                user: this.state.user
+                                username: this.state.username
+                            }
+                        }}>
+                        <img src="/dev/images/icon_list_pink.png" alt="" />
 
-                        state: {
-                            user: this.state.user,
-                            username: this.state.username
-                        }}
-
-
-
-                        }>
-                        <button>List</button>
                     </Link>
-                </div>
+                    </div>
             </div>
         )
     }
 }
-
-
 
 export default TopBar;

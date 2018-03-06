@@ -51,7 +51,7 @@ class SearchResultsGenre extends React.Component {
                 <TopBar 
                 username={this.state.username} 
                 user={this.state.user} 
-          />          
+            />          
                 {this.state.movies.map((movie) => {
                    return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
                 })}
