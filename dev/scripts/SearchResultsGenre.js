@@ -47,7 +47,7 @@ class SearchResultsGenre extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="searchResults clearfix">
                 {this.state.movies.map((movie) => {
                     return <UniqueMovie movie={movie} key={movie.id} />
                 })}

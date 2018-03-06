@@ -1,0 +1,133 @@
+body {
+    background-color: #d8d8d8;
+}
+
+button {
+    padding: 0;
+    border: none;
+}
+
+img {
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.searchResults {
+    max-width: 320px;
+    padding: 5%;
+    margin: 0 auto;
+}
+
+.movieResult {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.movieImage {
+    width: 100%;
+    display: block;
+}
+
+.movieResultIcon {
+    max-height: 25px;
+    margin-bottom: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.moreInfoButton,
+.addToListButton {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #00053C;
+    border: 2px solid #F72A75;
+    border-radius: 4px;
+}
+
+.moreInfoButton {
+    border-right: 1px solid #F72A75;
+}
+
+.addToListButton {
+    border-left: 1px solid #F72A75;
+}
+
+//this applies from 480px onwards
+@media (min-width: 480px) {
+    .searchResults {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .movieResult {
+        width: 48%;
+        margin: 0;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+    .searchResults .movieResult:nth-child(2n+2) {
+        margin-left: 4%;
+    }
+
+}
+
+//this applies from 768px
+@media (min-width: 768px) {
+    .searchResults {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 2.5%;
+
+    }
+
+    .searchResults .movieResult:nth-child(2n+2) {
+        margin-left: 0;
+    }
+
+    .searchResults .movieResult:nth-child(3n+2) {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .movieResult {
+        width: 32%;
+        margin-bottom: 15px;
+    }
+}
+
+//this applies from 1280px
+@media (min-width: 1280px) {
+    .searchResults {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .searchResults .movieResult:nth-child(3n+2) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .searchResults .movieResult:nth-child(4n+2) {
+        margin-left: calc(4% / 3);
+        margin-right: calc(4% / 3); 
+    }
+
+    .searchResults .movieResult:nth-child(4n+3) {
+        margin-right: calc(4% / 3);
+    }
+
+    body .searchResults .movieResult {
+        width: 24%;
+    }
+
+}

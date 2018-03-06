@@ -6,14 +6,12 @@ class UniqueMovie extends React.Component {
     render() {
         console.log('search is returning')
         return (
-            <div>
-                <img src={`https://image.tmdb.org/t/p/w200/${this.props.movie.poster_path}`} alt="" />
+            <div className="movieResult">
+                <img className="movieImage" src={`https://image.tmdb.org/t/p/w200/${this.props.movie.poster_path}`} alt="" />
                 
-                <div>
-                    <Link to={`movie/${this.props.movie.id}`}>
-                        <button>More Info</button>
-                    </Link>
-                    <Addbutton />
+                <div className="movieButtons clearfix">
+                    <Link className="moreInfoButton" to={`movie/${this.props.movie.id}`}><img className="movieResultIcon" src={'./dev/images/icon_info.png'}/></Link>
+                    <button className="addToListButton" ><img className="movieResultIcon" src={'./dev/images/icon_add.png'} /></button>
                 </div>
             </div>
         )
