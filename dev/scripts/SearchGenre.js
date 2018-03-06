@@ -31,10 +31,13 @@ class SearchGenre extends React.Component {
 
                         state: { 
                             name: this.props.genreRequest,
-                            user: this.props.user }
+                            user: this.props.user,
+                            username: this.props.username }
                     }}>
                     {/* <input type="submit" /> */}
+                    
                     <button>Submit small change</button>
+                    
                 </Link>
             </div>
         )

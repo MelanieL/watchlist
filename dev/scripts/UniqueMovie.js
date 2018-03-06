@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import Addbutton from './Addbutton';
 
 class UniqueMovie extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: this.props.user,
+            movie: this.props.movie.title
+        }
+    }
     render() {
         console.log('search is returning')
         return (
@@ -13,7 +21,8 @@ class UniqueMovie extends React.Component {
                     <Link to={`movie/${this.props.movie.id}`}>
                         <button>More Info</button>
                     </Link>
-                    <Addbutton />
+                    <Addbutton user={this.state.user}
+                    movie={this.state.movie}/>
                 </div>
             </div>
         )

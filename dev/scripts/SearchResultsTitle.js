@@ -15,8 +15,9 @@ class SearchResultsTitle extends React.Component {
         super(props);
         this.state = {
             movies: [],
-            name: this.props.location.state.name,
-            user: this.props.location.state.user
+            user: this.props.location.state.user,
+            movie: this.props.location.state.movieName,
+            username: this.props.location.state.userName
         };
     }
 
@@ -33,7 +34,7 @@ class SearchResultsTitle extends React.Component {
                 include_adult: false,
                 page: 1,
                 // We will need to set the value below to be based on users response
-                query: this.state.name
+                query: this.state.movie
             }
         })
             .then(({ data }) => {
@@ -47,8 +48,14 @@ class SearchResultsTitle extends React.Component {
     render() {
         return (
                 <div>
+                    <TopBar 
+                    user={this.state.user} 
+                    movie={this.state.movie}
+                    username={this.state.username}/>
+
                     {this.state.movies.map((movie) => {
-                        return <UniqueMovie movie={movie} key={movie.id} />
+                        return <UniqueMovie movie={movie} key={movie.id} 
+                        user={this.state.user}/>
                     })}
                 </div>
         )

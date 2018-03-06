@@ -15,11 +15,11 @@ class SearchResultsGenre extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
         this.state = {
             movies: [],
             name: this.props.location.state.name,
-            user: this.props.location.state.user
+            user: this.props.location.state.user,
+            username: this.props.location.state.username,
         };
     }
 
@@ -48,8 +48,12 @@ class SearchResultsGenre extends React.Component {
     render() {
         return (
             <div>
+                <TopBar 
+                username={this.state.username} 
+                user={this.state.user}
+                />
                 {this.state.movies.map((movie) => {
-                    return <UniqueMovie movie={movie} key={movie.id} />
+                    return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
                 })}
             </div>
         )
