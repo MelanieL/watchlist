@@ -7,6 +7,7 @@ import axios from 'axios';
 import config from './config';
 import { Link } from 'react-router-dom';
 import SearchGenre from './SearchGenre';
+import Addbutton from './Addbutton';
 
 //This page is where log in and logged in screen will be stated
 
@@ -14,10 +15,11 @@ class SearchResultsGenre extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
         this.state = {
             movies: [],
-            name: this.props.location.state.name
+            name: this.props.location.state.name,
+            user: this.props.location.state.user,
+            username: this.props.location.state.username,
         };
     }
 
@@ -45,9 +47,13 @@ class SearchResultsGenre extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="searchResults clearfix">
+                <TopBar 
+                username={this.state.username} 
+                user={this.state.user} 
+          />          
                 {this.state.movies.map((movie) => {
-                    return <UniqueMovie movie={movie} key={movie.id} />
+                   return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
                 })}
             </div>
         )
