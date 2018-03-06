@@ -27,9 +27,11 @@ class TopBar extends React.Component {
                             pathname: '/WatchList',
                             state: {
                                 user: this.state.user
+                                username: this.state.username
                             }
                         }}>
                         <img src="/dev/images/icon_list_pink.png" alt="" />
+
                     </Link>
                     </div>
             </div>
