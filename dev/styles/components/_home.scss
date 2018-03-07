@@ -1,16 +1,88 @@
 // Designing mobile first, starting at 320px
 
-.home__div {
-    background: $color1;
-    // height: 100vh;
-}
-
 // This is where the logged in screen starts
 
+.home__loggedin__content {
+    background: $color6;
+    padding-top: 15vh;
+}
+
+.home__loggedin__content h2 {
+    text-align: center;
+}
+
+.home__loggedin__content h4 {
+	width: 80%;
+	float: left;
+}
+
+.search__genrediv,
+.search__titlediv {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.searchform img,
+.searchicon_genre img {
+    width: 20px;
+}
+
+.searchform input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    display: block;
+    float: left;
+    margin: 0 auto;
+    width: 240px;
+}
+
+.home__loggedin button {
+    background: none;
+    color: $color5;
+    margin: 0 auto;
+    border: $color5 solid 2px;
+    border-radius: 3px;
+    display: block;
+    font-size: 1.2rem;
+    padding: 16px 0;
+    text-align: center;
+    width: 160px;
+}
+
+.searchform button,
+.searchform a,
+.searchicon_genre,
+button.search_button {
+    border: none;
+    float: left;
+    height: 20px;
+    padding: 0px 0px 0px 5px;
+    width: 25px;
+}
+
+.search__genrediv h4 {
+    margin-top: 50px;
+    display: inline-block;
+    width: 100%;
+}
+
+.search__genrediv input {
+    float: left;
+}
+
+select {
+    float: left;
+}
+
+form {
+    padding-bottom: 70px;
+}
 
 // This is where the login screen starts
 
 .home__login {
+    background: $color1;
     height: 100vh;
     margin: 0 auto;
     padding-top: 15vh;
