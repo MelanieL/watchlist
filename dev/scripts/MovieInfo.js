@@ -6,7 +6,6 @@ import config from './config';
 import axios from 'axios';
 import Addbutton from './Addbutton';
 import { Link } from 'react-router-dom';
-import Addbutton from './Addbutton';
 
 class MovieInfo extends React.Component {
 

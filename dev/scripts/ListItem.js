@@ -43,26 +43,20 @@ class ListItem extends React.Component {
         
         return (
             <div>
-                
                 <ul>
-                    
                     {this.state.lists.map((data, i) => {
                         return (
-                        <div>
-                                
-                            <li key={i}>
-                                {data.name.movie} 
-                                </li>
-                                <button onClick={() => this.removeMovie(data.key)}>Remove</button>
-                                <label>Watched</label>
-                                <input type="checkbox" onClick={this.checked} />
-                            </div>
+                        <div className="clearfix">
+                            <li className="list__title" key={i}>{data.name.movie}
+                                <button className="remove_button_list" onClick={() => this.removeMovie(data.key)}>X
+                                    {/* <img src="/dev/images/icon_remove.png" alt=""/> */}
+                                </button>
+                                <label className="add_item_label">Watched</label>
+                                <input className="add_item" type="checkbox" onClick={this.checked} />                       
+                            </li>
+                        </div>
                         )
                     })}
-                    
-                
-
-                
                 </ul>
             </div>
         )

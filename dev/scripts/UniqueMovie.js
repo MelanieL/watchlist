@@ -29,7 +29,7 @@ class UniqueMovie extends React.Component {
                             movie: this.state.movie,
                             username: this.state.username,
                             moviedid: this.state.movieid
-                        }}}><img className="movieResultIcon" src={'./dev/images/icon_info.png'}/></Link>
+                        }}}><img className="movieResultIcon" src={'/dev/images/icon_info_white.png'}/></Link>
                     <Addbutton 
                                 user={this.state.user} 
                                 movie={this.state.movie}

@@ -1,0 +1,22 @@
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+.list__title li {
+    // float: left;
+    font-weight: 800;
+    width: 20%;
+}
+
+.remove_button_list {
+    background: none;
+    // float: left;
+}
+
+.add_item,
+.add_item_label,
+.list__title,
+.remove_button_list {
+    padding: 0px 10px;
+}
