@@ -8,7 +8,7 @@ class Addbutton extends React.Component {
         this.state = {
             user: this.props.user,
             movie: this.props.movie,
-            movieid: this.props.movieid
+            
         }
         this.addMovie = this.addMovie.bind(this);
     }
@@ -23,7 +23,6 @@ class Addbutton extends React.Component {
         dbref.push({
             user: this.state.user,
             movie: this.state.movie,
-            movieid: this.state.movieid
         });
     }
 

@@ -13,7 +13,7 @@ class MovieInfo extends React.Component {
         super(props);
         this.state = {
             poster_path: '',
-            title: '',
+            title: this.props.location.state.movie,
             release_date: '',
             overview: '',
             genres: [],
@@ -36,7 +36,7 @@ class MovieInfo extends React.Component {
                 console.log(data);
                 this.setState({
                     poster_path: data.poster_path,
-                    title: data.title,
+                    // title: data.title,
                     release_date: data.release_date,
                     overview: data.overview,
                     id: data.id,
@@ -51,7 +51,7 @@ class MovieInfo extends React.Component {
     render() {
         return (
             <div className="movieInfoContainer">
-                <TopBar />
+                <TopBar user={this.state.user} username={this.state.username} />
                 <div className="movieInfo clearfix">
                     <div className="movieInfoPoster"><img src={`https://image.tmdb.org/t/p/w200/${this.state.poster_path}`} alt="poster"/></div>
                     <div className="movieInfoData">
@@ -65,7 +65,7 @@ class MovieInfo extends React.Component {
                                 className="mightAlsoLike">
                             Might also like
                             </Link>
-                            <Addbutton user={this.state.user} movie={this.state.movie} />
+                            <Addbutton user={this.state.user} movie={this.state.title} />
                         </div>
                     </div>
                 </div>
