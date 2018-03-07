@@ -4,6 +4,7 @@
 
 .home__loggedin__content {
     background: $color6;
+    height: 100vh;
     padding-top: 15vh;
 }
 
@@ -19,7 +20,8 @@
 .search__genrediv,
 .search__titlediv {
     margin: 0 auto;
-    width: 80%;
+    // width: 80%;
+    width: 280px;
 }
 
 .searchform img,
