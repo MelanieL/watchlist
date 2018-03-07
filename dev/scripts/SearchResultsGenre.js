@@ -53,7 +53,10 @@ class SearchResultsGenre extends React.Component {
                 user={this.state.user} 
             />          
                 {this.state.movies.map((movie) => {
-                   return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
+                   return <UniqueMovie movie={movie} 
+                                       key={movie.id} 
+                                       user={this.state.user}
+                                       username={this.state.username} />
                 })}
             </div>
         )

@@ -117,8 +117,10 @@ class Home extends React.Component {
             <div className="home__div">
                 {this.state.loggedIn ?
                     <div className="home__loggedin">
-                        <TopBar username={this.state.userName}
-                        user={this.state.user}/>
+                        <TopBar 
+                        username={this.state.userName}
+                        user={this.state.user} />
+
                         <h1>Welcome {this.state.userName}</h1>
                         <h3>Type in a movie by title or pick a genre from the drop down</h3>
 

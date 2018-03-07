@@ -26,7 +26,7 @@ class TopBar extends React.Component {
                         {
                             pathname: '/WatchList',
                             state: {
-                                user: this.state.user
+                                user: this.state.user,
                                 username: this.state.username
                             }
                         }}>

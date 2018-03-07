@@ -54,8 +54,12 @@ class SearchResultsTitle extends React.Component {
                     username={this.state.username}/>
 
                     {this.state.movies.map((movie) => {
-                        return <UniqueMovie movie={movie} key={movie.id} 
-                        user={this.state.user}/>
+                        return <UniqueMovie 
+                                movie={movie} 
+                                key={movie.id} 
+                                user={this.state.user}
+                                username={this.state.username} 
+                                />
                     })}
                 </div>
         )

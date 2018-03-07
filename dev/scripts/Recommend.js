@@ -4,6 +4,7 @@ import axios from 'axios';
 import config from './config';
 import { Link } from 'react-router-dom';
 import UniqueMovie from './UniqueMovie'
+import TopBar from './TopBar';
 
 class Recommend extends React.Component {
     constructor(props) {
@@ -11,7 +12,9 @@ class Recommend extends React.Component {
         console.log(this.props);
         this.state = {
             movieID: this.props.location.state.name,
-            recommendMovies: []
+            recommendMovies: [],
+            user: this.props.location.state.user,
+            username: this.props.location.state.username
         }
         console.log(this.state);
     }
@@ -36,8 +39,17 @@ class Recommend extends React.Component {
     render() {
         return (
                 <div>
+                    <TopBar 
+                    user={this.state.user}
+                    username={this.state.username} />
+
                     {this.state.recommendMovies.map((movie) => {
-                        return <UniqueMovie movie={movie} key={movie.id} />
+                        return <UniqueMovie 
+                                            movie={movie} 
+                                            key={movie.id} 
+                                            user={this.state.user}
+                                            username={this.state.username}
+                                            />
                     })}
                 </div> 
         )
