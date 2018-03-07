@@ -7,7 +7,8 @@ class ListItem extends React.Component {
         super(props);
         this.state = {
             lists: [],
-            user: this.props.user
+            user: this.props.user,
+            movieid: ''
         }
     }
 
@@ -20,7 +21,6 @@ class ListItem extends React.Component {
 
             for (let key in data) {
                 newState.push({ key: key, name: data[key] });
-                console.log(newState);
             }
 
             this.setState({
@@ -33,8 +33,12 @@ class ListItem extends React.Component {
     removeMovie(data) {
         const dbRef = firebase.database().ref(`${this.state.user}/list/${data}`);
         dbRef.remove();
-        console.log(data);
     }
+
+    checked (e) {
+        console.log('worked');
+    }
+
     render() {
         
         return (
@@ -45,13 +49,13 @@ class ListItem extends React.Component {
                     {this.state.lists.map((data, i) => {
                         return (
                         <div>
-                                <label>Watched</label>
-                                <input type="checkbox" />
+                                
                             <li key={i}>
-                                {data.name.movie} {data.key}
+                                {data.name.movie} 
                                 </li>
-                            <Link to={'./MovieInfo'}>info</Link>
                                 <button onClick={() => this.removeMovie(data.key)}>Remove</button>
+                                <label>Watched</label>
+                                <input type="checkbox" onClick={this.checked} />
                             </div>
                         )
                     })}

@@ -55,8 +55,12 @@ class SearchResultsTitle extends React.Component {
                 <div className="searchResults clearfix">
 
                     {this.state.movies.map((movie) => {
-                        return <UniqueMovie movie={movie} key={movie.id} 
-                        user={this.state.user}/>
+                        return <UniqueMovie 
+                                movie={movie} 
+                                key={movie.id} 
+                                user={this.state.user}
+                                username={this.state.username} 
+                                />
                     })}
                 </div>
             </div>

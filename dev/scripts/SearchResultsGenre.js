@@ -49,6 +49,7 @@ class SearchResultsGenre extends React.Component {
         return (
             <div>
                 <TopBar 
+
                     username={this.state.username} 
                     user={this.state.user} 
                 />          
@@ -57,6 +58,7 @@ class SearchResultsGenre extends React.Component {
                     return <UniqueMovie movie={movie} key={movie.id} user={this.state.user} />
                     })}
                 </div>
+
             </div>
         )
     }

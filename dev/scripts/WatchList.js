@@ -10,7 +10,7 @@ constructor (props) {
     super(props);
     this.state = {
         user: this.props.location.state.user,
-        username: ''
+        username: this.props.location.state.username,
     }
 }
     render() {
@@ -19,7 +19,10 @@ constructor (props) {
         return (
             
             <div>
-                <TopBar />
+                <TopBar 
+                user={this.state.user}
+                username={this.state.username}
+                />
                 <ListItem user={this.state.user}/>
             </div>
         )

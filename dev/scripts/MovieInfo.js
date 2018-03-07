@@ -6,11 +6,12 @@ import config from './config';
 import axios from 'axios';
 import Addbutton from './Addbutton';
 import { Link } from 'react-router-dom';
+import Addbutton from './Addbutton';
 
 class MovieInfo extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             poster_path: '',
             title: '',
@@ -19,7 +20,9 @@ class MovieInfo extends React.Component {
             genres: [],
             genreID: [],
             // ID will not render on the final page, but is needed to be passed along as props to comment - Mel
-            id: ''
+            id: '',
+            user: this.props.location.state.user,
+            username: this.props.location.state.username
         };
     }
 
@@ -77,7 +80,9 @@ class MovieInfo extends React.Component {
                     )} </p>
                 {/* ID will not be rendered on final product only here now so I know it's working - Mel */}
                 {/* <p>ID:{this.state.id}</p> */}
-                <Comments movieID={this.state.id} />
+                <Comments 
+                movieID={this.state.id}
+                username={this.state.username} />
             </div>
         )
     }

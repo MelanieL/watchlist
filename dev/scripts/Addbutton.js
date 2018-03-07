@@ -7,7 +7,8 @@ class Addbutton extends React.Component {
         super(props);
         this.state = {
             user: this.props.user,
-            movie: this.props.movie
+            movie: this.props.movie,
+            movieid: this.props.movieid
         }
         this.addMovie = this.addMovie.bind(this);
     }
@@ -21,7 +22,8 @@ class Addbutton extends React.Component {
         const dbref = firebase.database().ref(`${this.state.user}/list`)
         dbref.push({
             user: this.state.user,
-            movie: this.state.movie
+            movie: this.state.movie,
+            movieid: this.state.movieid
         });
     }
 

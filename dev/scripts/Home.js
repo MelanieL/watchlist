@@ -115,14 +115,16 @@ class Home extends React.Component {
         return (
             <div className="home__div">
                 {this.state.loggedIn ?
-                    <div className="home__loggedin">
+                    <div className="home__loggedin">                      
+                        
                         <TopBar username={this.state.userName}
                         user={this.state.user}/>
                         <div className="home__loggedin__content">
                             <h2>Welcome {this.state.userName} !</h2>
-                            {/* <h3>Type in a movie by title or pick a genre from the drop down</h3> */}
+                            
                             <SearchTitle placeholder="title" userInput={this.input} 
                             inputRequest={this.state.input}
+
                             user={this.state.user}
                             userName={this.state.userName}/>                                     
                             <SearchGenre 
