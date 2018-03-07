@@ -4,21 +4,5 @@
 @import "components/topbar";
 @import "components/home";
 @import "components/searchResultsGenre";
+@import "components/movieInfo";
 
-* {
-    outline: 1px solid red;
-}
-
-html{
-    margin-top:0;
-    padding-top:0;
-}
-body{
-    margin-top:0;
-    padding-top:0;
-}
-
-.home_div {
-    margin-top: 0;
-    padding-top: 0;
-}
