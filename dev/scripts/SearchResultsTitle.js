@@ -47,11 +47,12 @@ class SearchResultsTitle extends React.Component {
     
     render() {
         return (
+            <div>
+                <TopBar 
+                user={this.state.user} 
+                movie={this.state.movie}
+                username={this.state.username}/>
                 <div className="searchResults clearfix">
-                    <TopBar 
-                    user={this.state.user} 
-                    movie={this.state.movie}
-                    username={this.state.username}/>
 
                     {this.state.movies.map((movie) => {
                         return <UniqueMovie 
@@ -62,6 +63,7 @@ class SearchResultsTitle extends React.Component {
                                 />
                     })}
                 </div>
+            </div>
         )
     }
 }

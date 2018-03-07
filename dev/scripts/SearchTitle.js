@@ -10,8 +10,9 @@ class SearchTitle extends React.Component {
         // console.log('searchform')
 
         return (
-            <div>
-                <form> 
+            <div className="search__titlediv">
+                <h4>Search By Title:</h4>
+                <form className="searchform genre"> 
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={
                         {pathname: '/SearchResultsTitle', 
@@ -22,7 +23,7 @@ class SearchTitle extends React.Component {
                              userName: this.props.userName
                               }}}>
                         {/* <input type="submit" /> */}
-                        <button>Click</button>
+                        <button><img src="/dev/images/icon_search.png" alt=""/></button>
                     </Link>     
                 </form>
             </div>

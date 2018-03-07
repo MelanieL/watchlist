@@ -1,0 +1,65 @@
+// .movieInfoContainer {
+//     padding: 5%;
+//     padding-top: 0;
+// }
+
+.movieInfo {
+    padding-top: 10px;
+    padding: 5%
+}
+
+.movieInfoPoster img {
+    display: block;
+    width: 100%
+}
+
+.movieInfoPoster {
+    width: 100%;
+}
+.movieInfoData {
+    width: 100%;
+}
+
+.mightAlsoLike,
+.addToListButton {
+    width: 50%;
+    float: left
+}
+
+.mightAlsoLike {
+    border: 2px solid #F72A75;
+    border-right: 1px solid #F72A75;
+    border-radius: 4px;
+    padding-top: calc((39px - 22px) / 2);
+    padding-bottom: calc((39px - 22px)/ 2);
+    text-align: center;
+    color: white;
+    background-color: #00053C;
+}
+
+.genres {
+    background: black;
+    color: white;
+    padding: 4px;
+    margin-right: 1px;
+    border-radius: 4px;
+}
+
+
+//this applies from 480px onwards
+@media (min-width: 480px) {
+    .movieInfoPoster{
+        width: 40%;
+        float: left;
+    }
+
+    .movieInfoData {
+        width: 55%;
+        float: right;
+    }
+}
+
+//this applies from 768px onwars
+@media (min-width: 768px) {
+    
+}

@@ -111,35 +111,34 @@ class Home extends React.Component {
         })
     }
 
-
     render() {
         return (
             <div className="home__div">
                 {this.state.loggedIn ?
-                    <div className="home__loggedin">
-                        <TopBar 
-                        username={this.state.userName}
-                        user={this.state.user} />
+                    <div className="home__loggedin">                      
+                        
+                        <TopBar username={this.state.userName}
+                        user={this.state.user}/>
+                        <div className="home__loggedin__content">
+                            <h2>Welcome {this.state.userName} !</h2>
+                            
+                            <SearchTitle placeholder="title" userInput={this.input} 
+                            inputRequest={this.state.input}
 
-                        <h1>Welcome {this.state.userName}</h1>
-                        <h3>Type in a movie by title or pick a genre from the drop down</h3>
-
-                        <SearchTitle placeholder="title" userInput={this.input} 
-                        inputRequest={this.state.input}
-                        user={this.state.user}
-                        userName={this.state.userName}/>                                     
-                        <SearchGenre 
-                            // genreName={this.findGenre()}
-                            genres={this.state.genre}
-                            // userSelectGenre={this.userSelectsGenre()} 
-                            passState={this.passState}
-                            // userGenreSelection={this.state.userGenreSelection}
-                            genreRequest={this.state.userGenreSelection}
                             user={this.state.user}
-                            username={this.state.userName}
-                            />
-
-                        <button onClick={this.signUserOut}>Sign out</button>
+                            userName={this.state.userName}/>                                     
+                            <SearchGenre 
+                                // genreName={this.findGenre()}
+                                genres={this.state.genre}
+                                // userSelectGenre={this.userSelectsGenre()} 
+                                passState={this.passState}
+                                // userGenreSelection={this.state.userGenreSelection}
+                                genreRequest={this.state.userGenreSelection}
+                                user={this.state.user}
+                                username={this.state.userName}
+                                />
+                            <button className="button_text button_logout" onClick={this.signUserOut}>Sign Out</button>
+                        </div>
                     </div>
                     :
                     <div className="home__login">

@@ -31,7 +31,7 @@ class Addbutton extends React.Component {
     render () {
         return (
             <div>
-                <button onClick={this.addMovie} className="addToListButton"><img className="movieResultIcon" src={'./dev/images/icon_add.png'} /></button>
+                <button onClick={this.addMovie} className="addToListButton"><img className="movieResultIcon" src={'/dev/images/icon_add_white.png'} /></button>
             </div>
         )
     }

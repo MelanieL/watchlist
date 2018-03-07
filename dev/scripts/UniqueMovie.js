@@ -20,6 +20,7 @@ class UniqueMovie extends React.Component {
                 <img className="movieImage" src={`https://image.tmdb.org/t/p/w200/${this.props.movie.poster_path}`} alt="" />
                 
                 <div className="movieButtons clearfix">
+
                     <Link className="moreInfoButton" to={
                         
                         {pathname: `movie/${this.props.movie.id}`,
@@ -33,6 +34,7 @@ class UniqueMovie extends React.Component {
                                 user={this.state.user} 
                                 movie={this.state.movie}
                                 movieid={this.state.movieid}/>
+
                 </div>
             </div>
         )
