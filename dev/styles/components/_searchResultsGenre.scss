@@ -7,8 +7,8 @@ button {
     border: none;
 }
 
-img {
-    object-fit: contain;
+.movieImage {
+    object-fit: cover;
 }
 
 a {
@@ -17,6 +17,7 @@ a {
 }
 
 .searchResults {
+    padding-top: 15vh;
     max-width: 320px;
     padding: 5%;
     margin: 0 auto;
@@ -64,6 +65,10 @@ a {
 
 //this applies from 480px onwards
 @media (min-width: 480px) {
+    .movieImage {
+        max-height: 270px;
+    }
+
     .searchResults {
         max-width: 480px;
         margin: 0 auto;
@@ -75,14 +80,29 @@ a {
         margin-bottom: 15px;
     }
 
+    .searchResults .movieResult:nth-child(2n+1) {
+        float: left;
+    }
+
     .searchResults .movieResult:nth-child(2n+2) {
-        margin-left: 4%;
+        float: right;
     }
 
 }
 
 //this applies from 768px
 @media (min-width: 768px) {
+    .searchResults .movieResult:nth-child(2n+1) {
+        float: left;
+    }
+
+    .searchResults .movieResult:nth-child(2n+2) {
+        float: left;
+    }
+
+    .movieImage {
+        max-height: 300px;
+    }
     .searchResults {
         max-width: 768px;
         margin: 0 auto;
@@ -107,9 +127,10 @@ a {
 
 //this applies from 1280px
 @media (min-width: 1280px) {
-    .searchResults .movieImage {
-        max-height: 410px;
+    .movieImage {
+        max-height: 390px;
     }
+
     .searchResults {
         max-width: 1280px;
         margin: 0 auto;
