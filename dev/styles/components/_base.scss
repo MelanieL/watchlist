@@ -13,10 +13,15 @@ $color3: #8D33EE;
 // Lighter pink
 $color4: #F63BE3;
 
-// Coral pink
+// Coral pink / Call to action colour
 $color5: #F72A75;
 
 // Grey
-$color6: #D3D3D3
+$color6: #D3D3D3;
+
 
 // BORDER RADIUS OF 4
+
+input:focus {
+    outline: none;
+}

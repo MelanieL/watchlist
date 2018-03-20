@@ -23,7 +23,7 @@ class SearchTitle extends React.Component {
                              userName: this.props.userName
                               }}}>
                         {/* <input type="submit" /> */}
-                        <button><img src="/dev/images/icon_search.png" alt=""/></button>
+                        <button className="search_button_genre">Search By Title</button>
                     </Link>     
                 </form>
             </div>

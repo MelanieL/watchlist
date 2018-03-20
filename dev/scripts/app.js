@@ -12,12 +12,12 @@ import Recommend from './Recommend';
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCBjWiDGq0F7a6AdGWW6WlptRMnlT_hyww",
-  authDomain: "project6-2296b.firebaseapp.com",
-  databaseURL: "https://project6-2296b.firebaseio.com",
-  projectId: "project6-2296b",
+  apiKey: "AIzaSyAp-PB7nn8hGPNVl7_W0vsmM1GyeV_Gm8w",
+  authDomain: "project6-version2.firebaseapp.com",
+  databaseURL: "https://project6-version2.firebaseio.com",
+  projectId: "project6-version2",
   storageBucket: "",
-  messagingSenderId: "106014854957"
+  messagingSenderId: "815831896048"
 };
 firebase.initializeApp(config);
 

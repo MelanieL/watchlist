@@ -1,15 +1,19 @@
 // Designing mobile first, starting at 320px
 
-// This is where the logged in screen starts
-
 .home__loggedin__content {
     background: $color6;
     height: 100vh;
-    padding-top: 15vh;
+    padding-top: 70px;
 }
 
-.home__loggedin__content h2 {
+.home__loggedin__content h2,
+.home__loggedin__content h5 {
     text-align: center;
+}
+
+.button_logout {
+    background: none;
+    color: $color5;
 }
 
 .home__loggedin__content h4 {
@@ -37,19 +41,6 @@
     float: left;
     margin: 0 auto;
     width: 240px;
-}
-
-.home__loggedin button {
-    background: none;
-    color: $color5;
-    margin: 0 auto;
-    border: $color5 solid 2px;
-    border-radius: 3px;
-    display: block;
-    font-size: 1.2rem;
-    padding: 16px 0;
-    text-align: center;
-    width: 160px;
 }
 
 .searchform button,
@@ -124,33 +115,6 @@ form {
     text-align: center;
     width: 160px;
 }
-
-@media (min-width: 570px) {
-    .home__login__logoimgdiv {
-        width: 50%;
-        margin: 0 auto;
-    }
-}
-
-@media (min-width: 680px) {
-    .home__login__logoimgdiv {
-        width: 40%;
-    }
-}
-
-@media (min-width: 780px) {
-    .home__login__logoimgdiv {
-        width: 30%;
-    }
-}
-
-@media (min-width: 1000px) {
-    .home__login__logoimgdiv {
-        width: 20%;
-    }
-}
-
-
 
 
 

@@ -6,14 +6,9 @@ import axios from 'axios';
 import SearchGenre from './SearchGenre';
 import TopBar from './TopBar';
 
-//This page is where log in and logged in screen will be stated
-
-
-
-
 class Home extends React.Component {
 
-    constructor () {
+    constructor() {
         super();
         this.state = {
             genre: [],
@@ -21,7 +16,7 @@ class Home extends React.Component {
             input: "",
             loggedIn: false,
             user: '',
-            userText:'',
+            userText: '',
             userName: ''
         }
         this.passState = this.passState.bind(this);
@@ -36,14 +31,14 @@ class Home extends React.Component {
             params: {
                 api_key: 'f012df5d63927931e82fe659a8aaa3ac'
             }
-        }).then( data  => 
+        }).then(data =>
             this.setState({
                 genre: data.data.genres,
             })
-        );
-        firebase.auth().onAuthStateChanged((userRes) =>{
+            );
+        firebase.auth().onAuthStateChanged((userRes) => {
             console.log(userRes.uid);
-            if(userRes) {
+            if (userRes) {
                 this.setState({
                     loggedIn: true,
                     user: userRes.uid,
@@ -58,7 +53,7 @@ class Home extends React.Component {
         });
     }
 
-    signUserIn(){
+    signUserIn() {
         console.log('trying to sign in!')
         const provider = new firebase.auth.GoogleAuthProvider();
         provider.setCustomParameters({
@@ -70,7 +65,7 @@ class Home extends React.Component {
             });
     }
 
-    signUserOut(){
+    signUserOut() {
         console.log('signing user out now');
         firebase.auth().signOut();
         this.setState({
@@ -78,9 +73,9 @@ class Home extends React.Component {
         })
     }
 
-    handleChange (e){
+    handleChange(e) {
         console.log(e.target.value);
-        this. setState({
+        this.setState({
             [e.target.id]: e.target.value
         })
     }
@@ -89,23 +84,23 @@ class Home extends React.Component {
         e.preventDefault();
         console.log('formsubmitted!');
 
-        const dbref=firebase.database().ref(`users/${this.state.user.uid}`);
+        const dbref = firebase.database().ref(`users/${this.state.user.uid}`);
 
         dbref.push(this.state.userText);
 
         this.setState({
-            userText:""
+            userText: ""
         })
 
     }
 
-    passState (event) {
+    passState(event) {
         this.setState({
             userGenreSelection: event.target.value
         })
     }
 
-    input (event) {
+    input(event) {
         this.setState({
             input: event.target.value
         })
@@ -115,19 +110,18 @@ class Home extends React.Component {
         return (
             <div className="home__div">
                 {this.state.loggedIn ?
-                    <div className="home__loggedin">                      
-                        
+                    <div className="home__loggedin">
                         <TopBar username={this.state.userName}
-                        user={this.state.user}/>
+                            user={this.state.user} />
                         <div className="home__loggedin__content">
-                            <h2>Welcome {this.state.userName} !</h2>
-                            
-                            <SearchTitle placeholder="title" userInput={this.input} 
-                            inputRequest={this.state.input}
+                            <h2>Welcome {this.state.userName}!</h2>
+                            <h5>Not you? <button className="button_logout" onClick={this.signUserOut}>Sign Out</button></h5>
+                            <SearchTitle placeholder="title" userInput={this.input}
+                                inputRequest={this.state.input}
 
-                            user={this.state.user}
-                            userName={this.state.userName}/>                                     
-                            <SearchGenre 
+                                user={this.state.user}
+                                userName={this.state.userName} />
+                            <SearchGenre
                                 // genreName={this.findGenre()}
                                 genres={this.state.genre}
                                 // userSelectGenre={this.userSelectsGenre()} 
@@ -136,23 +130,19 @@ class Home extends React.Component {
                                 genreRequest={this.state.userGenreSelection}
                                 user={this.state.user}
                                 username={this.state.userName}
-                                />
-                            <button className="button_text button_logout" onClick={this.signUserOut}>Sign Out</button>
+                            />
                         </div>
                     </div>
                     :
                     <div className="home__login">
-                        <div className="home__login__logoimgdiv"><img src="/dev/images/icon_logo_pink.png" alt="logo image of a tv with a play button inside"/></div>
+                        <div className="home__login__logoimgdiv"><img src="/dev/images/icon_logo_pink.png" alt="logo image of a tv with a play button inside" /></div>
                         <h1>MovieWatchlist</h1>
                         <button className="button__text" onClick={this.signUserIn}>Sign In</button>
                     </div>
                 }
-
             </div>
         )
     }
 }
-
-
 
 export default Home;
