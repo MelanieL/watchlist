@@ -1,9 +1,6 @@
 // Designing mobile first, starting at 320px
-
 .home__loggedin__content {
-    background: $color6;
-    height: 100vh;
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 .home__loggedin__content h2,
@@ -17,20 +14,32 @@
 }
 
 .home__loggedin__content h4 {
-	width: 80%;
-	float: left;
+	width: 100%;
+    text-align: center;
+}
+
+.pink_button {
+    background: $color5;
+    border: solid 2px $color5;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 16px;
+    margin: 35px;
+    width: 200px;
+}
+
+.pink_button:hover {
+    opacity: 0.3;
 }
 
 .search__genrediv,
 .search__titlediv {
-    margin: 0 auto;
-    // width: 80%;
+    border: solid 1px #000;
+    min-height: 230px;
+    margin: 30px auto;
     width: 280px;
-}
-
-.searchform img,
-.searchicon_genre img {
-    width: 20px;
 }
 
 .searchform input {
@@ -38,38 +47,15 @@
     border: none;
     border-bottom: 2px solid black;
     display: block;
-    float: left;
-    margin: 0 auto;
+    margin-left: 17px;
+    padding: 10px;
     width: 240px;
 }
 
-.searchform button,
-.searchform a,
-.searchicon_genre,
-button.search_button {
-    border: none;
-    float: left;
-    height: 20px;
-    padding: 0px 0px 0px 5px;
-    width: 25px;
-}
-
-.search__genrediv h4 {
-    margin-top: 50px;
-    display: inline-block;
-    width: 100%;
-}
-
-.search__genrediv input {
-    float: left;
-}
-
 select {
-    float: left;
-}
-
-form {
-    padding-bottom: 70px;
+    background: #FFF;
+    font-family: $body-font;
+    margin-left: 70px;
 }
 
 // This is where the login screen starts
@@ -116,7 +102,25 @@ form {
     width: 160px;
 }
 
+@media (min-width: 1110px) {
+    .home__loggedin__content {
+        margin: 0 auto;
+        width: 700px;
+    }
 
+    .search__genrediv {
+        float: right;
+    }
 
+    .search__titlediv {
+        float: left;
+    }
+}
+
+@media (min-width: 540px) {
+    .home__login__logoimgdiv {
+        width: 280px;
+    }
+}
 
 

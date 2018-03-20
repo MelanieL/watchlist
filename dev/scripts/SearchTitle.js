@@ -5,13 +5,10 @@ import axios from 'axios';
 
 class SearchTitle extends React.Component {
     
-
     render() {
-        // console.log('searchform')
-
         return (
             <div className="search__titlediv">
-                <h4>Search By Title:</h4>
+                <h4>Find Movies By Title:</h4>
                 <form className="searchform genre"> 
                     <input type="text" placeholder={this.props.placeholder} onChange={this.props.userInput} />
                     <Link to={
@@ -22,8 +19,7 @@ class SearchTitle extends React.Component {
                              user: this.props.user,
                              userName: this.props.userName
                               }}}>
-                        {/* <input type="submit" /> */}
-                        <button className="search_button_genre">Search By Title</button>
+                        <button className="search_button_genre pink_button">SEARCH</button>
                     </Link>     
                 </form>
             </div>

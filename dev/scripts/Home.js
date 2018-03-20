@@ -116,17 +116,13 @@ class Home extends React.Component {
                         <div className="home__loggedin__content">
                             <h2>Welcome {this.state.userName}!</h2>
                             <h5>Not you? <button className="button_logout" onClick={this.signUserOut}>Sign Out</button></h5>
-                            <SearchTitle placeholder="title" userInput={this.input}
+                            <SearchTitle placeholder="Title" userInput={this.input}
                                 inputRequest={this.state.input}
-
                                 user={this.state.user}
                                 userName={this.state.userName} />
                             <SearchGenre
-                                // genreName={this.findGenre()}
                                 genres={this.state.genre}
-                                // userSelectGenre={this.userSelectsGenre()} 
                                 passState={this.passState}
-                                // userGenreSelection={this.state.userGenreSelection}
                                 genreRequest={this.state.userGenreSelection}
                                 user={this.state.user}
                                 username={this.state.userName}

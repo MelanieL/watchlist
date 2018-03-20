@@ -7,7 +7,7 @@ class SearchGenre extends React.Component {
     render() {
         return (
             <div className="search__genrediv">
-                <h4>Search By Genre:</h4>
+                <h4>Find Movies By Genre:</h4>
                 <form className="searchform genre clearfix">
                         <select className="clearfix" onChange={this.props.passState}>
                             return(
@@ -26,7 +26,7 @@ class SearchGenre extends React.Component {
                                 user: this.props.user,
                                 username: this.props.username }
                         }}>                        
-                        <button className="search_button_genre">Search By Genre</button>
+                        <button className="search_button_genre pink_button">SEARCH</button>
                     </Link>
                 </form>
             </div>
