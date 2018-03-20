@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 import SearchGenre from './SearchGenre';
 import Addbutton from './Addbutton';
 
-//This page is where log in and logged in screen will be stated
-
 class SearchResultsGenre extends React.Component {
 
     constructor(props) {
@@ -24,25 +22,19 @@ class SearchResultsGenre extends React.Component {
     }
 
     componentDidMount() {
-
-        // This is the axios call for searching by title
-
         axios.get(`${config.apiURL}/genre/${this.state.name}/movies`, {
             params: {
                 api_key: config.apiKey,
                 language: 'en-US',
                 include_adult: false,
                 page: 1,
-                // We will need to set the value below to be based on users response
-                
             }
         })
-            .then(({ data }) => {
-                console.log(data);
-                this.setState({
-                    movies: data.results
-                });
+        .then(({ data }) => {
+            this.setState({
+                movies: data.results
             });
+        });
     }
 
     render() {

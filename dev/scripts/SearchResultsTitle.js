@@ -7,8 +7,6 @@ import axios from 'axios';
 import config from './config';
 import { Link } from 'react-router-dom';
 
-//This page is where log in and logged in screen will be stated
-
 class SearchResultsTitle extends React.Component {
 
     constructor (props) {
@@ -22,10 +20,6 @@ class SearchResultsTitle extends React.Component {
     }
 
     componentDidMount() {
-
-        
-
-        // This is the axios call for searching by title
         
         axios.get(`${config.apiURL}/search/movie`, {
             params: {
@@ -33,12 +27,10 @@ class SearchResultsTitle extends React.Component {
                 language: 'en-US',
                 include_adult: false,
                 page: 1,
-                // We will need to set the value below to be based on users response
                 query: this.state.movie
             }
         })
             .then(({ data }) => {
-                console.log(data);
                 this.setState({
                     movies: data.results
                 });
@@ -53,7 +45,6 @@ class SearchResultsTitle extends React.Component {
                 movie={this.state.movie}
                 username={this.state.username}/>
                 <div className="searchResults clearfix">
-
                     {this.state.movies.map((movie) => {
                         return <UniqueMovie 
                                 movie={movie} 
@@ -67,7 +58,5 @@ class SearchResultsTitle extends React.Component {
         )
     }
 }
-
-
 
 export default SearchResultsTitle;

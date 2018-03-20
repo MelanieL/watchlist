@@ -54,7 +54,6 @@ class Home extends React.Component {
     }
 
     signUserIn() {
-        console.log('trying to sign in!')
         const provider = new firebase.auth.GoogleAuthProvider();
         provider.setCustomParameters({
             prompt: 'select_account'
@@ -66,7 +65,6 @@ class Home extends React.Component {
     }
 
     signUserOut() {
-        console.log('signing user out now');
         firebase.auth().signOut();
         this.setState({
             loggedIn: false
@@ -74,7 +72,6 @@ class Home extends React.Component {
     }
 
     handleChange(e) {
-        console.log(e.target.value);
         this.setState({
             [e.target.id]: e.target.value
         })
@@ -82,16 +79,11 @@ class Home extends React.Component {
 
     addText(e) {
         e.preventDefault();
-        console.log('formsubmitted!');
-
         const dbref = firebase.database().ref(`users/${this.state.user.uid}`);
-
         dbref.push(this.state.userText);
-
         this.setState({
             userText: ""
         })
-
     }
 
     passState(event) {

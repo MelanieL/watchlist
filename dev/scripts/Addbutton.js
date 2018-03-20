@@ -8,7 +8,6 @@ class Addbutton extends React.Component {
         this.state = {
             user: this.props.user,
             movie: this.props.movie,
-            
         }
         this.addMovie = this.addMovie.bind(this);
     }
@@ -26,15 +25,13 @@ class Addbutton extends React.Component {
         });
     }
 
-        
     render () {
         return (
             <div>
-                <button onClick={this.addMovie} className="addToListButton"><img className="movieResultIcon" src={'/dev/images/icon_add_white.png'} /></button>
+                <button onClick={this.addMovie} className="addToListButton">ADD TO LIST</button>
             </div>
         )
     }
-
 }
 
 export default Addbutton;

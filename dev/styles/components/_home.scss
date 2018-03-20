@@ -10,7 +10,9 @@
 
 .button_logout {
     background: none;
+    border-bottom: none;
     color: $color5;
+    outline: none;
 }
 
 .home__loggedin__content h4 {
@@ -56,6 +58,10 @@ select {
     background: #FFF;
     font-family: $body-font;
     margin-left: 70px;
+}
+
+select option {
+    background: $color5;
 }
 
 // This is where the login screen starts

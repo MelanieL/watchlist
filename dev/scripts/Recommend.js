@@ -38,23 +38,23 @@ class Recommend extends React.Component {
 
     render() {
         return (
-                <div>
-                    <TopBar 
+            <div>
+                <TopBar 
                     user={this.state.user}
                     username={this.state.username} />
-
+                <div className="searchResults clearfix">
                     {this.state.recommendMovies.map((movie) => {
                         return <UniqueMovie 
-                                            movie={movie} 
-                                            key={movie.id} 
-                                            user={this.state.user}
-                                            username={this.state.username}
-                                            />
+                            movie={movie} 
+                            key={movie.id} 
+                            user={this.state.user}
+                            username={this.state.username}
+                        />
                     })}
-                </div> 
+                </div>
+            </div> 
         )
     }
-
 }
 
 export default Recommend;

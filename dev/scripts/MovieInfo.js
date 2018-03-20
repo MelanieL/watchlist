@@ -18,14 +18,12 @@ class MovieInfo extends React.Component {
             overview: '',
             genres: [],
             genreID: [],
-            // ID will not render on the final page, but is needed to be passed along as props to comment - Mel
             id: '',
             user: this.props.location.state.user,
             username: this.props.location.state.username
         };
     }
 
-    
     componentDidMount() {
         axios.get(`${config.apiURL}/movie/${this.props.match.params.id}`, {
             params: {
@@ -42,18 +40,17 @@ class MovieInfo extends React.Component {
                     id: data.id,
                     genres: data.genres
                 });
-                // Still an issue here listing all genres, moving on to comments and coming back to this - Mel
-
             })
     }  
-
 
     render() {
         return (
             <div className="movieInfoContainer">
                 <TopBar user={this.state.user} username={this.state.username} />
                 <div className="movieInfo clearfix">
-                    <div className="movieInfoPoster"><img src={`https://image.tmdb.org/t/p/w200/${this.state.poster_path}`} alt="poster"/></div>
+                    <div className="movieInfoPoster">
+                        <img src={`https://image.tmdb.org/t/p/w400/${this.state.poster_path}`} alt="poster"/>
+                    </div>
                     <div className="movieInfoData">
                         <h2>Title: {this.state.title}</h2>
                         <h2>Release Date: {this.state.release_date}</h2>
@@ -77,8 +74,6 @@ class MovieInfo extends React.Component {
                     {
                     return (<span className="genres" key={i}> {data.name} </span>)}
                     )} </p>
-                {/* ID will not be rendered on final product only here now so I know it's working - Mel */}
-                {/* <p>ID:{this.state.id}</p> */}
                 <Comments 
                 movieID={this.state.id}
                 username={this.state.username} />
@@ -86,7 +81,5 @@ class MovieInfo extends React.Component {
         )
     }
 }
-
-
 
 export default MovieInfo;
