@@ -1,11 +1,10 @@
-// .movieInfoContainer {
-//     padding: 5%;
-//     padding-top: 0;
-// }
-
 .movieInfo {
-    padding-top: 10px;
-    padding: 5%
+    padding-top: 90px;
+}
+
+.movieInfoPoster {
+    margin: 0 auto;
+    width: 80%;
 }
 
 .movieInfoPoster img {
@@ -13,40 +12,55 @@
     width: 100%
 }
 
-.movieInfoPoster {
-    width: 100%;
-}
-.movieInfoData {
-    width: 100%;
-}
-
-.mightAlsoLike,
-.addToListButton {
-    width: 50%;
-    float: left
-}
-
-.mightAlsoLike {
-    border: 2px solid #F72A75;
-    border-right: 1px solid #F72A75;
+.mightAlsoLikeButton {
+    background-color: $color1;
+    border: 2px solid $color5;
     border-radius: 4px;
-    padding-top: calc((39px - 22px) / 2);
-    padding-bottom: calc((39px - 22px)/ 2);
+    color: #FFF;
+    display: block;
+    float: left;
+    margin-top: 30px;
+    padding: 15px;
     text-align: center;
-    color: white;
-    background-color: #00053C;
+    width: 80%;
+}
+
+.mightAlsoLikeButton:hover {
+    color: $color5;
+}
+
+
+.movieInfoData {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.movieinfo__genreslist {
+    margin: 0;
+    padding: 0;
+}
+
+.movieinfo__genrestitle {
+    font-weight: 500;
+    margin-top: 20px;
 }
 
 .genres {
-    background: black;
+    background: rgb(146, 146, 146);
+    border-radius: 2px;
     color: white;
+    margin: 5px;
     padding: 4px;
-    margin-right: 1px;
-    border-radius: 4px;
+    text-align: center;
+    width: 50%;
 }
 
+.comments {
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 80%;
+}
 
-//this applies from 480px onwards
 @media (min-width: 480px) {
     .movieInfoPoster{
         width: 40%;

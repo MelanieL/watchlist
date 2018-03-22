@@ -7,7 +7,11 @@ class Comment extends React.Component {
         return (
             <div className="movieinfo__commentdiv">
                 <h5 className="movieinfo__commentdiv__comment">{this.props.data.name}</h5>
-                <button onClick={() => this.props.remove(this.props.aCommentIndex)}><div className="movieinfo__commentdiv__removebutton">x</div></button>
+                <button onClick={() => this.props.remove(this.props.aCommentIndex)}>
+                <div className="movieinfo__commentdiv__removebutton">
+                    <img src="/dev/images/icon_remove.png" alt="" />
+                </div>
+                </button>
             </div>
         );
     }

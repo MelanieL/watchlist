@@ -52,31 +52,40 @@ class MovieInfo extends React.Component {
                         <img src={`https://image.tmdb.org/t/p/w400/${this.state.poster_path}`} alt="poster"/>
                     </div>
                     <div className="movieInfoData">
-                        <h2>Title: {this.state.title}</h2>
-                        <h2>Release Date: {this.state.release_date}</h2>
+                        <h2>{this.state.title}</h2>
+                        <h4>Release Date: {this.state.release_date}</h4>
                         <div className="clearfix">
-                            <Link to={{
-                                pathname: '/Recommend',
-                                state: { name: this.state.id, }}                  
-                                }
-                                className="mightAlsoLike">
-                            Might also like
-                            </Link>
-                            <Addbutton user={this.state.user} movie={this.state.title} />
+                            <div className="movieinfo__addbuttondiv clearfix">
+                                <Addbutton user={this.state.user} movie={this.state.title} />
+                            </div>
+                            <div className="movieinfo__descriptiondiv">
+                                <p>{this.state.overview}</p>
+                            </div>
+                                <p className="movieinfo__genrestitle">Genres:</p> 
+                                <ul className="movieinfo__genreslist">
+                                    {this.state.genres.map( (data, i) => 
+                                    {
+                                        return (<li className="genres" key={i}> {data.name} </li>)}
+                                    )}
+                                </ul>
+                            <div className="movieinfo__mightalsolikediv clearfix">
+                                <Link to={{
+                                    pathname: '/Recommend',
+                                    state: { name: this.state.id, }
+                                    }
+                                    }
+                                    className="mightAlsoLikeButton">
+                                    MORE LIKE THIS...
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p>Description: {this.state.overview}</p>
+                <div className="comments">
+                    <Comments 
+                    movieID={this.state.id}
+                    username={this.state.username} />
                 </div>
-
-                <p>Genres: {this.state.genres.map( (data, i) => 
-                    {
-                    return (<span className="genres" key={i}> {data.name} </span>)}
-                    )} </p>
-                <Comments 
-                movieID={this.state.id}
-                username={this.state.username} />
             </div>
         )
     }

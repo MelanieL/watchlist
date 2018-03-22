@@ -1,0 +1,28 @@
+.comments__fullsection {
+    border-top: 0.25px solid rgb(116, 115, 115);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.comment_field {
+    background: none;
+    border: none;
+    border-bottom: 2px solid $color1;
+    font-family: $body-font;
+    margin-bottom: 15px;
+    outline: none;
+    padding: 5px;
+    width: 90%;
+}
+
+.comment_button {
+    background: $color5;
+    border: 1px solid $color5;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+
+.movieinfo__commentdiv__removebutton {
+    background: none;
+}
