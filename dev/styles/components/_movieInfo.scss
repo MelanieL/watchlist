@@ -20,6 +20,7 @@
     display: block;
     float: left;
     margin-top: 30px;
+    max-width: 275px;
     padding: 15px;
     text-align: center;
     width: 80%;
@@ -28,7 +29,6 @@
 .mightAlsoLikeButton:hover {
     color: $color5;
 }
-
 
 .movieInfoData {
     margin: 0 auto;
@@ -50,6 +50,7 @@
     border-radius: 2px;
     color: white;
     margin: 5px;
+    max-width: 160px;
     padding: 4px;
     text-align: center;
     width: 50%;
@@ -63,12 +64,18 @@
 
 @media (min-width: 480px) {
     .movieInfoPoster{
-        width: 40%;
         float: left;
+        padding: 10px 10px 10px 30px;
+        width: 40%;
     }
 
     .movieInfoData {
-        width: 55%;
         float: right;
+        padding: 10px 30px 10px 10px;
+        width: 58%;
+    }
+
+    .movieinfo__addbuttondiv div button {
+        width: 170px;
     }
 }

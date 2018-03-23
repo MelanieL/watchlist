@@ -1,3 +1,8 @@
+button {
+    background: none;
+    border: none;
+}
+
 .comments__fullsection {
     border-top: 0.25px solid rgb(116, 115, 115);
     margin-top: 20px;
@@ -11,7 +16,7 @@
     font-family: $body-font;
     margin-bottom: 15px;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     width: 90%;
 }
 
@@ -23,6 +28,36 @@
     padding: 5px;
 }
 
+.comments__form {
+    margin-bottom: 30px;
+
+}
+
+.movieinfo__commentdiv {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.movieinfo__commentdiv__comment {
+    padding: 10px 10px 0 10px;
+    width: 80%;
+}
+
 .movieinfo__commentdiv__removebutton {
     background: none;
+    border: none;
+    float: right;
+    margin: 0 0 10px 5px;
+    width: 20px;
+}
+
+.movieinfo__commentdiv__removebutton img {
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .comment_field {
+        width: 95%;
+    }
 }

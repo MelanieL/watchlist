@@ -27,7 +27,7 @@ class Addbutton extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className="clearfix">
                 <button onClick={this.addMovie} className="addToListButton">ADD TO LIST</button>
             </div>
         )

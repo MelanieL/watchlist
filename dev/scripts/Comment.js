@@ -6,7 +6,7 @@ class Comment extends React.Component {
     render() {
         return (
             <div className="movieinfo__commentdiv">
-                <h5 className="movieinfo__commentdiv__comment">{this.props.data.name}</h5>
+                <p className="movieinfo__commentdiv__comment">{this.props.data.name}</p>
                 <button onClick={() => this.props.remove(this.props.aCommentIndex)}>
                 <div className="movieinfo__commentdiv__removebutton">
                     <img src="/dev/images/icon_remove.png" alt="" />
