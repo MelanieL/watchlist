@@ -1,0 +1,41 @@
+.watchlist__maindiv h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 90px 40px 20px 40px;
+}
+
+.listitem__maindiv__list {
+    margin: 0;
+}
+
+.listitem__individualitem {
+    border: 1px solid $color2;
+    padding: 10px 10px 10px 10px;
+    margin: 20px 0;
+    width: 90%;
+}
+
+.listitem__individualitem h4 {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+
+.listitem__individualitem button {
+    float: right;
+    margin-top: 0;
+    width: 40px;
+}
+
+.listitem__individualitem button img {
+    width: 100%;
+}
+
+.watched_item_div {
+    float: right;
+}
+
+.watched_item_box {
+    margin: 0 10px 0 5px;
+}

@@ -15,19 +15,15 @@ class ListItem extends React.Component {
     componentDidMount() {
         const dbRef = firebase.database().ref(`${this.state.user}/list`);
         dbRef.on('value', (response) => {
-            console.log(response.val());
             const newState = [];
             const data = response.val();
-
             for (let key in data) {
                 newState.push({ key: key, name: data[key] });
             }
-
             this.setState({
                 lists: newState,
             });
         });
-
     }
 
     removeMovie(data) {
@@ -35,34 +31,33 @@ class ListItem extends React.Component {
         dbRef.remove();
     }
 
-    checked (e) {
-        console.log('worked');
-    }
+    // checked (e) {
+    // }
 
     render() {
-        
         return (
-            <div>
-                <ul>
+            <div className="listitem__maindiv">
+                <ul className="listitem__maindiv__list">
                     {this.state.lists.map((data, i) => {
-                        return (
+                    return (
                         <div className="clearfix">
-                            <li className="list__title" key={i}>{data.name.movie}
-                                <button className="remove_button_list" onClick={() => this.removeMovie(data.key)}>X
-                                    {/* <img src="/dev/images/icon_remove.png" alt=""/> */}
+                            <li className="listitem__individualitem clearfix" key={i}>
+                                <h4>{data.name.movie}</h4>
+                                <button className="remove_button_list" onClick={() => this.removeMovie(data.key)}>
+                                    <img src="/dev/images/icon_remove.png" alt="" />
                                 </button>
-                                <label className="add_item_label">Watched</label>
-                                <input className="add_item" type="checkbox" onClick={this.checked} />                       
+                                <div className="watched_item_div">
+                                    <label className="watched_item_label">Watched</label>
+                                    <input className="watched_item_box" type="checkbox" onClick={this.checked} />
+                                </div>
                             </li>
                         </div>
-                        )
+                    )
                     })}
                 </ul>
             </div>
         )
     }
 }
-
-
 
 export default ListItem;

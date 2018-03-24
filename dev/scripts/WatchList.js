@@ -13,23 +13,19 @@ class WatchList extends React.Component {
             username: this.props.location.state.username,
         }
     }
+
     render() {
-
-
         return (
-
-            <div>
+            <div className="watchlist__maindiv clearfix">
                 <TopBar
                     user={this.state.user}
                     username={this.state.username}
                 />
+                <h2>My Saved Movies</h2>
                 <ListItem user={this.state.user} />
             </div>
         )
     }
-
 }
-
-
 
 export default WatchList;
