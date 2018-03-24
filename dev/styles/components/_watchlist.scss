@@ -1,18 +1,20 @@
 .watchlist__maindiv h2 {
     margin-top: 0;
     margin-bottom: 0;
-    padding: 90px 40px 20px 40px;
+    padding: 100px 10% 10px 10%;
 }
 
 .listitem__maindiv__list {
-    margin: 0;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
 }
 
 .listitem__individualitem {
     border: 1px solid $color2;
     padding: 10px 10px 10px 10px;
     margin: 20px 0;
-    width: 90%;
+    width: 100%;
 }
 
 .listitem__individualitem h4 {

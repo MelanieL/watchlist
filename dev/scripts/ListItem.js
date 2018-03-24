@@ -8,7 +8,7 @@ class ListItem extends React.Component {
         this.state = {
             lists: [],
             user: this.props.user,
-            movieid: ''
+            movieid: '',
         }
     }
 

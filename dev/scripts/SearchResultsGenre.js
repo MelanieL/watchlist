@@ -41,7 +41,6 @@ class SearchResultsGenre extends React.Component {
         return (
             <div>
                 <TopBar 
-
                     username={this.state.username} 
                     user={this.state.user} 
                 />          
